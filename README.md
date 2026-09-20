@@ -50,7 +50,7 @@ SaraMobile/
 │   ├── translations/         # File terjemahan i18next (en-EN, fr-FR)
 │   ├── App.tsx               # Komponen root aplikasi
 │   └── reactotron.config.ts  # Konfigurasi Reactotron (dev)
-├── .env                      # Variabel lingkungan
+├── .env.example               # Template variabel lingkungan
 ├── babel.config.js
 ├── metro.config.js
 ├── package.json
@@ -60,7 +60,7 @@ SaraMobile/
 ## ✅ Prasyarat
 
 - **Node.js** `>= 22.11.0`
-- **npm** atau **Yarn** (proyek ini dilengkapi `package-lock.json` dan `yarn.lock`)
+- **Yarn** (proyek ini dikelola dengan Yarn, lihat `yarn.lock`)
 - **Android**: Android Studio / Android SDK dengan emulator atau perangkat fisik
 - **iOS** (macOS only): Xcode, CocoaPods, dan simulator atau perangkat fisik
 - **JDK 17+** untuk build Android
@@ -70,10 +70,6 @@ SaraMobile/
 ### 1. Install Dependencies
 
 ```bash
-# Dengan npm
-npm install
-
-# atau dengan yarn
 yarn install
 ```
 
@@ -87,19 +83,23 @@ yarn pod-install
 
 ### 2. Konfigurasi Variabel Lingkungan
 
-Salin/isi file `.env` pada root proyek:
+file `.env` bersifat lokal dan diabaikan oleh git. Salin `.env.example` menjadi `.env` lalu sesuaikan nilainya:
+
+```bash
+cp .env.example .env
+```
+
+Isi file `.env` pada root proyek:
 
 ```env
 API_URL=https://jsonplaceholder.typicode.com
 ```
 
-> `API_URL` adalah base URL dari backend yang akan digunakan oleh `src/services/instance.ts`. Sesuaikan dengan endpoint backend SARA yang sebenarnya.
+> `API_URL` adalah base URL dari backend yang akan digunakan oleh `src/services/instance.ts`. Sesuaikan dengan endpoint backend SARA yang sebenarnya. Semua perubahan konfigurasi baru harus dicatat di `.env.example`.
 
 ### 3. Jalankan Metro Bundler
 
 ```bash
-npm start
-# atau
 yarn start
 ```
 
@@ -109,13 +109,9 @@ Buka terminal terpisah, lalu jalankan:
 
 ```bash
 # Android
-npm run android
-# atau
 yarn android
 
 # iOS (macOS only)
-npm run ios
-# atau
 yarn ios
 ```
 
