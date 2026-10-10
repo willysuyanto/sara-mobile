@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "828588796524",
+    "project_id": "sara-mobile-cb16c",
+    "storage_bucket": "sara-mobile-cb16c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:828588796524:android:674e24a5fc56f6b320c649",
+        "android_client_info": {
+          "package_name": "com.saramobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_gjir7zKzNWI-9cRFWWMn9539XfnyPo0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
