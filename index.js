@@ -1,10 +1,15 @@
 import { AppRegistry } from 'react-native';
 
 import { name as appName } from './app.json';
-import App from './src/App';
+import AppHeadlessCheck from './src/AppHeadlessCheck';
+import { registerBackgroundMessageHandler } from './src/services/messaging';
 
-// if (__DEV__) {
-//   void import('@/reactotron.config');
-// }
+// Handles messages received while the app is in the background or quit state.
+// Runs in headless JS: no React context, and the returned Promise must resolve
+// once the message has been handled.
+registerBackgroundMessageHandler(() => {
+  // TODO: route the message into app logic (e.g. sync via the API layer).
+  return Promise.resolve();
+});
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () => AppHeadlessCheck);
