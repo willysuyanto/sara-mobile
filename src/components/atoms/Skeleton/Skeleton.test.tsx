@@ -62,7 +62,7 @@ describe('SkeletonLoader', () => {
     //   opacity: 1,
     // });
     expect(skeleton).toHaveStyle({
-      backgroundColor: '#A1A1A1',
+      backgroundColor: '#e2e3f0',
       borderRadius: 4,
       height: 50,
       width: 100,

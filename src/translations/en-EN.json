@@ -1,14 +1,63 @@
 {
   "saramobile": {
     "common_appName": {
-      "full": "React Native SaraMobile",
-      "initials": "RNB"
+      "full": "SARA Mobile",
+      "initials": "SM",
+      "long": "Smart Assistant for Responsive Automation"
     },
     "common_error": "Oops! Something went wrong.",
-    "screen_example": {
-      "hello_user": "Hi, my name is {{name}}",
-      "title": "Welcome on The $t(common_appName.full)",
-      "description": "Do you want to discover some features? Just click on one of the three buttons at the bottom of the screen. The first allows you to call a REST API. The second lets you change the theme color. And the third allows you to change the language."
+    "validation_email_invalid": "Enter a valid email address.",
+    "validation_fullName_required": "Your name is required.",
+    "validation_password_min": "Password must be at least 8 characters.",
+    "validation_password_mismatch": "Passwords do not match.",
+    "screen_landing": {
+      "body": "Discover a new favorite way to get things done.",
+      "cta": "Get started",
+      "heading": "Ready to work a little smarter?"
+    },
+    "screen_login": {
+      "emailLabel": "Email",
+      "emailPlaceholder": "nama@email.com",
+      "forgotPassword": "Forgot password?",
+      "noAccount": "Don't have an account?",
+      "passwordLabel": "Kata sandi",
+      "passwordPlaceholder": "Masukkan kata sandi",
+      "register": "Register",
+      "rememberMe": "Ingat saya",
+      "submit": "Masuk",
+      "subtitle": "SARA is ready to help you get today's important things done.",
+      "title": "Welcome back!"
+    },
+    "screen_register": {
+      "confirmPasswordHelper": "At least 8 characters.",
+      "confirmPasswordLabel": "Konfirmasi kata sandi",
+      "confirmPasswordPlaceholder": "Konfirmasi kata sandi",
+      "emailLabel": "Email",
+      "emailPlaceholder": "nama@email.com",
+      "fullNameLabel": "Nama lengkap",
+      "fullNamePlaceholder": "Tulis nama kamu",
+      "haveAccount": "Already have an account?",
+      "login": "Login",
+      "passwordHelper": "At least 8 characters.",
+      "passwordLabel": "Kata sandi",
+      "passwordPlaceholder": "Buat kata sandi",
+      "submit": "Buat akun",
+      "subtitle": "Create an account to organize and prioritize your tasks.",
+      "title": "Start your productive journey"
+    },
+    "screen_forgot_password": {
+      "backToLoginQuestion": "Remember your password?",
+      "emailLabel": "Email",
+      "emailPlaceholder": "nama@email.com",
+      "login": "Login",
+      "submit": "Send reset link",
+      "subtitle": "Enter your email and we'll send you a reset link.",
+      "title": "Reset your password"
+    },
+    "screen_dashboard": {
+      "body": "Your dashboard is on its way. Everything you need will live here.",
+      "eyebrow": "DASHBOARD",
+      "title": "You're all set"
     },
     "error_boundary": {
       "title": "Oops! Something went wrong.",

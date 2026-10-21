@@ -1,0 +1,797 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/format.json",
+  "SARA / Primitives": {
+    "spacing": {
+      "013": {
+        "$type": "dimension",
+        "$value": {
+          "value": 13,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 13 px. Fractional source values are preserved."
+      },
+      "027": {
+        "$type": "dimension",
+        "$value": {
+          "value": 27,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 27 px. Fractional source values are preserved."
+      },
+      "007": {
+        "$type": "dimension",
+        "$value": {
+          "value": 7,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 7 px. Fractional source values are preserved."
+      },
+      "024": {
+        "$type": "dimension",
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 24 px. Fractional source values are preserved."
+      },
+      "010": {
+        "$type": "dimension",
+        "$value": {
+          "value": 10,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 10 px. Fractional source values are preserved."
+      },
+      "012": {
+        "$type": "dimension",
+        "$value": {
+          "value": 12,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 12 px. Fractional source values are preserved."
+      },
+      "008": {
+        "$type": "dimension",
+        "$value": {
+          "value": 8,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 8 px. Fractional source values are preserved."
+      },
+      "006": {
+        "$type": "dimension",
+        "$value": {
+          "value": 6,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 6 px. Fractional source values are preserved."
+      },
+      "022": {
+        "$type": "dimension",
+        "$value": {
+          "value": 22,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 22 px. Fractional source values are preserved."
+      },
+      "021": {
+        "$type": "dimension",
+        "$value": {
+          "value": 21,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 21 px. Fractional source values are preserved."
+      },
+      "009": {
+        "$type": "dimension",
+        "$value": {
+          "value": 9,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 9 px. Fractional source values are preserved."
+      },
+      "017": {
+        "$type": "dimension",
+        "$value": {
+          "value": 17,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 17 px. Fractional source values are preserved."
+      },
+      "015": {
+        "$type": "dimension",
+        "$value": {
+          "value": 15,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 15 px. Fractional source values are preserved."
+      },
+      "004": {
+        "$type": "dimension",
+        "$value": {
+          "value": 4,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 4 px. Fractional source values are preserved."
+      },
+      "023": {
+        "$type": "dimension",
+        "$value": {
+          "value": 23,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 23 px. Fractional source values are preserved."
+      },
+      "003": {
+        "$type": "dimension",
+        "$value": {
+          "value": 3,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 3 px. Fractional source values are preserved."
+      },
+      "016": {
+        "$type": "dimension",
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 16 px. Fractional source values are preserved."
+      },
+      "014": {
+        "$type": "dimension",
+        "$value": {
+          "value": 14,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 14 px. Fractional source values are preserved."
+      },
+      "001": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 1 px. Fractional source values are preserved."
+      },
+      "005": {
+        "$type": "dimension",
+        "$value": {
+          "value": 5,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 5 px. Fractional source values are preserved."
+      },
+      "020": {
+        "$type": "dimension",
+        "$value": {
+          "value": 20,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 20 px. Fractional source values are preserved."
+      },
+      "011": {
+        "$type": "dimension",
+        "$value": {
+          "value": 11,
+          "unit": "px"
+        },
+        "$description": "Exact space value extracted from SARA UI: 11 px. Fractional source values are preserved."
+      }
+    },
+    "color": {
+      "neutral": {
+        "100": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [0.941176, 0.945098, 0.960784],
+            "hex": "#f0f1f5"
+          },
+          "$description": "SARA normalized color primitive #F0F1F5"
+        },
+        "200": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [0.886275, 0.890196, 0.941176],
+            "hex": "#e2e3f0"
+          },
+          "$description": "SARA normalized color primitive #E2E3F0"
+        },
+        "400": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [0.592157, 0.607843, 0.654902],
+            "hex": "#979ba7"
+          },
+          "$description": "SARA normalized color primitive #979BA7"
+        },
+        "600": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [0.454902, 0.458824, 0.545098],
+            "hex": "#74758b"
+          },
+          "$description": "SARA normalized color primitive #74758B"
+        },
+        "900": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [0.12549, 0.129412, 0.227451],
+            "hex": "#20213a"
+          },
+          "$description": "SARA normalized color primitive #20213A"
+        },
+        "1000": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [0, 0, 0],
+            "hex": "#000000"
+          },
+          "$description": "SARA normalized color primitive #000000"
+        },
+        "000": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [1, 1, 1],
+            "hex": "#ffffff"
+          },
+          "$description": "SARA normalized color primitive #FFFFFF"
+        }
+      },
+      "violet": {
+        "100": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [0.913725, 0.909804, 1],
+            "hex": "#e9e8ff"
+          },
+          "$description": "SARA normalized color primitive #E9E8FF"
+        },
+        "600": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [0.341176, 0.32549, 0.807843],
+            "hex": "#5753ce"
+          },
+          "$description": "SARA normalized color primitive #5753CE"
+        },
+        "800": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [0.223529, 0.207843, 0.603922],
+            "hex": "#39359a"
+          },
+          "$description": "SARA normalized color primitive #39359A"
+        },
+        "050": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [0.964706, 0.960784, 1],
+            "hex": "#f6f5ff"
+          },
+          "$description": "SARA normalized color primitive #F6F5FF"
+        }
+      },
+      "amber": {
+        "200": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [0.909804, 0.87451, 0.807843],
+            "hex": "#e8dfce"
+          },
+          "$description": "SARA normalized color primitive #E8DFCE"
+        },
+        "500": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [0.768627, 0.607843, 0.329412],
+            "hex": "#c49b54"
+          },
+          "$description": "SARA normalized color primitive #C49B54"
+        },
+        "800": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [0.541176, 0.45098, 0.286275],
+            "hex": "#8a7349"
+          },
+          "$description": "SARA normalized color primitive #8A7349"
+        },
+        "050": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [0.984314, 0.968627, 0.937255],
+            "hex": "#fbf7ef"
+          },
+          "$description": "SARA normalized color primitive #FBF7EF"
+        }
+      },
+      "green": {
+        "600": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [0.262745, 0.513726, 0.431373],
+            "hex": "#43836e"
+          },
+          "$description": "SARA normalized color primitive #43836E"
+        },
+        "050": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [0.929412, 0.960784, 0.941176],
+            "hex": "#edf5f0"
+          },
+          "$description": "SARA normalized color primitive #EDF5F0"
+        }
+      },
+      "red": {
+        "200": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [1, 0.882493, 0.882493],
+            "hex": "#ffe1e1"
+          },
+          "$description": "SARA normalized color primitive #B65454"
+        },
+        "600": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [0.713726, 0.329412, 0.329412],
+            "hex": "#b65454"
+          },
+          "$description": "SARA normalized color primitive #B65454"
+        }
+      }
+    },
+    "radius": {
+      "xs": {
+        "$type": "dimension",
+        "$value": {
+          "value": 3,
+          "unit": "px"
+        },
+        "$description": "Exact radius value extracted from SARA UI: 3 px. Fractional source values are preserved. Original role: radius/3."
+      },
+      "2xs": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1,
+          "unit": "px"
+        },
+        "$description": "Exact radius value extracted from SARA UI: 1 px. Fractional source values are preserved. Original role: radius/1."
+      },
+      "avatar": {
+        "$type": "dimension",
+        "$value": {
+          "value": 18.4952,
+          "unit": "px"
+        },
+        "$description": "Exact radius value extracted from SARA UI: 18.49516487121582 px. Fractional source values are preserved. Original role: radius/18-49516487121582."
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": {
+          "value": 19,
+          "unit": "px"
+        },
+        "$description": "Exact radius value extracted from SARA UI: 19 px. Fractional source values are preserved. Original role: radius/19."
+      },
+      "circle-sm": {
+        "$type": "dimension",
+        "$value": {
+          "value": 99.9965,
+          "unit": "px"
+        },
+        "$description": "Exact radius value extracted from SARA UI: 99.99645233154297 px. Fractional source values are preserved. Original role: radius/99-99645233154297."
+      },
+      "circle-lg": {
+        "$type": "dimension",
+        "$value": {
+          "value": 124.9909,
+          "unit": "px"
+        },
+        "$description": "Exact radius value extracted from SARA UI: 124.99092102050781 px. Fractional source values are preserved. Original role: radius/124-99092102050781."
+      },
+      "button": {
+        "$type": "dimension",
+        "$value": {
+          "value": 10,
+          "unit": "px"
+        },
+        "$description": "Exact radius value extracted from SARA UI: 10 px. Fractional source values are preserved. Original role: radius/10."
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": {
+          "value": 4,
+          "unit": "px"
+        },
+        "$description": "Exact radius value extracted from SARA UI: 4 px. Fractional source values are preserved. Original role: radius/4."
+      },
+      "card": {
+        "$type": "dimension",
+        "$value": {
+          "value": 13,
+          "unit": "px"
+        },
+        "$description": "Exact radius value extracted from SARA UI: 13 px. Fractional source values are preserved. Original role: radius/13."
+      },
+      "control": {
+        "$type": "dimension",
+        "$value": {
+          "value": 6,
+          "unit": "px"
+        },
+        "$description": "Exact radius value extracted from SARA UI: 6 px. Fractional source values are preserved. Original role: radius/6."
+      },
+      "badge": {
+        "$type": "dimension",
+        "$value": {
+          "value": 5,
+          "unit": "px"
+        },
+        "$description": "Exact radius value extracted from SARA UI: 5 px. Fractional source values are preserved. Original role: radius/5."
+      },
+      "dot": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1.4948,
+          "unit": "px"
+        },
+        "$description": "Exact radius value extracted from SARA UI: 1.494840145111084 px. Fractional source values are preserved. Original role: radius/1-494840145111084."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": {
+          "value": 8,
+          "unit": "px"
+        },
+        "$description": "Exact radius value extracted from SARA UI: 8 px. Fractional source values are preserved. Original role: radius/8."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": {
+          "value": 12,
+          "unit": "px"
+        },
+        "$description": "Exact radius value extracted from SARA UI: 12 px. Fractional source values are preserved. Original role: radius/12."
+      }
+    }
+  },
+  "SARA / Semantic": {
+    "background": {
+      "secondary": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.000}",
+        "$description": "SARA Light: background/secondary. Alias to color/neutral/000"
+      },
+      "primary": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.000}",
+        "$description": "SARA Light: background/primary. Alias to color/neutral/000"
+      }
+    },
+    "text": {
+      "strong": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.900}",
+        "$description": "SARA Light: text/strong. Alias to color/neutral/900"
+      },
+      "primary": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.900}",
+        "$description": "SARA Light: text/primary. Alias to color/neutral/900"
+      },
+      "on-tertiary": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.violet.800}",
+        "$description": "SARA Light: text/on-tertiary. Alias to color/violet/800"
+      },
+      "tertiary": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.600}",
+        "$description": "SARA Light: text/tertiary. Alias to color/neutral/600"
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.600}",
+        "$description": "SARA Light: text/secondary. Alias to color/neutral/600"
+      },
+      "on-secondary-muted": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.600}",
+        "$description": "SARA Light: text/on-secondary-muted. Alias to color/neutral/600"
+      },
+      "accent": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.violet.800}",
+        "$description": "SARA Light: text/accent. Alias to color/violet/800"
+      },
+      "on-secondary": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.900}",
+        "$description": "SARA Light: text/on-secondary. Alias to color/neutral/900"
+      },
+      "helper": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.600}",
+        "$description": "SARA Light: text/helper. Alias to color/neutral/600"
+      },
+      "on-neutral": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.600}",
+        "$description": "SARA Light: text/on-neutral. Alias to color/neutral/600"
+      },
+      "disabled": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.400}",
+        "$description": "SARA Light: text/disabled. Alias to color/neutral/400"
+      },
+      "disabled-muted": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.400}",
+        "$description": "SARA Light: text/disabled-muted. Alias to color/neutral/400"
+      },
+      "muted": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.600}",
+        "$description": "SARA Light: text/muted. Alias to color/neutral/600"
+      },
+      "on-subtle": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.600}",
+        "$description": "SARA Light: text/on-subtle. Alias to color/neutral/600"
+      },
+      "supporting": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.600}",
+        "$description": "SARA Light: text/supporting. Alias to color/neutral/600"
+      },
+      "subtle": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.600}",
+        "$description": "SARA Light: text/subtle. Alias to color/neutral/600"
+      },
+      "on-overlay": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.violet.800}",
+        "$description": "SARA Light: text/on-overlay. Alias to color/violet/800"
+      },
+      "on-primary": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.000}",
+        "$description": "SARA Light: text/on-primary. Alias to color/neutral/000"
+      }
+    },
+    "system": {
+      "black": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.1000}",
+        "$description": "SARA Light: system/black. Alias to color/neutral/1000"
+      },
+      "outline": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.600}",
+        "$description": "SARA Light: system/outline. Alias to color/neutral/600"
+      },
+      "indicator": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.900}",
+        "$description": "SARA Light: system/indicator. Alias to color/neutral/900"
+      }
+    },
+    "surface": {
+      "tertiary": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.violet.100}",
+        "$description": "SARA Light: surface/tertiary. Alias to color/violet/100"
+      },
+      "primary": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.000}",
+        "$description": "SARA Light: surface/primary. Alias to color/neutral/000"
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.violet.100}",
+        "$description": "SARA Light: surface/secondary. Alias to color/violet/100"
+      },
+      "accent": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.violet.100}",
+        "$description": "SARA Light: surface/accent. Alias to color/violet/100"
+      },
+      "neutral": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.100}",
+        "$description": "SARA Light: surface/neutral. Alias to color/neutral/100"
+      },
+      "subtle": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.violet.050}",
+        "$description": "SARA Light: surface/subtle. Alias to color/violet/050"
+      },
+      "overlay": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.violet.100}",
+        "$description": "SARA Light: surface/overlay. Alias to color/violet/100"
+      },
+      "card": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.violet.050}",
+        "$description": "SARA Light: surface/card. Alias to color/violet/050"
+      },
+      "card-highlight": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.violet.100}",
+        "$description": "SARA Light: surface/card-highlight. Alias to color/violet/100"
+      }
+    },
+    "accent": {
+      "warm": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.amber.500}",
+        "$description": "SARA Light: accent/warm. Alias to color/amber/500"
+      }
+    },
+    "border": {
+      "secondary": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.200}",
+        "$description": "SARA Light: border/secondary. Alias to color/neutral/200"
+      },
+      "accent": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.200}",
+        "$description": "SARA Light: border/accent. Alias to color/neutral/200"
+      },
+      "primary": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.200}",
+        "$description": "SARA Light: border/primary. Alias to color/neutral/200"
+      },
+      "control": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.200}",
+        "$description": "SARA Light: border/control. Alias to color/neutral/200"
+      },
+      "subtle": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.200}",
+        "$description": "SARA Light: border/subtle. Alias to color/neutral/200"
+      }
+    },
+    "primary": {
+      "$type": "color",
+      "$value": "{SARA / Primitives.color.violet.600}",
+      "$description": "SARA Light: primary. Alias to color/violet/600"
+    },
+    "icon": {
+      "secondary": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.600}",
+        "$description": "SARA Light: icon/secondary. Alias to color/neutral/600"
+      },
+      "muted": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.400}",
+        "$description": "SARA Light: icon/muted. Alias to color/neutral/400"
+      },
+      "disabled": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.400}",
+        "$description": "SARA Light: icon/disabled. Alias to color/neutral/400"
+      },
+      "on-primary": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.neutral.000}",
+        "$description": "SARA Light: icon/on-primary. Alias to color/neutral/000"
+      }
+    },
+    "success": {
+      "surface": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.green.050}",
+        "$description": "SARA Light: success/surface. Alias to color/green/050"
+      },
+      "icon": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.green.600}",
+        "$description": "SARA Light: success/icon. Alias to color/green/600"
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.green.050}",
+        "$description": "SARA Light: success/background. Alias to color/green/050"
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.green.600}",
+        "$description": "SARA Light: success/foreground. Alias to color/green/600"
+      }
+    },
+    "secondary": {
+      "background": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.violet.100}",
+        "$description": "SARA Light: secondary/background. Alias to color/violet/100"
+      }
+    },
+    "secondary-2": {
+      "$type": "color",
+      "$value": "{SARA / Primitives.color.violet.800}",
+      "$description": "SARA Light: secondary. Alias to color/violet/800"
+    },
+    "button": {
+      "primary": {
+        "background": {
+          "$type": "color",
+          "$value": "{SARA / Primitives.color.violet.600}",
+          "$description": "SARA Light: button/primary/background. Alias to color/violet/600"
+        }
+      }
+    },
+    "brand": {
+      "logo": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.violet.800}",
+        "$description": "SARA Light: brand/logo. Alias to color/violet/800"
+      }
+    },
+    "navigation": {
+      "active": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.violet.800}",
+        "$description": "SARA Light: navigation/active. Alias to color/violet/800"
+      }
+    },
+    "error": {
+      "foreground": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.red.600}",
+        "$description": "SARA Light: error/foreground. Alias to color/red/600"
+      },
+      "foreground 2": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.red.200}",
+        "$description": "SARA Light: error/foreground. Alias to color/red/600"
+      }
+    },
+    "warning": {
+      "background": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.amber.050}",
+        "$description": "SARA Light: warning/background. Alias to color/amber/050"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.amber.200}",
+        "$description": "SARA Light: warning/border. Alias to color/amber/200"
+      },
+      "foreground": {
+        "$type": "color",
+        "$value": "{SARA / Primitives.color.amber.800}",
+        "$description": "SARA Light: warning/foreground. Alias to color/amber/800"
+      }
+    }
+  }
+}
