@@ -6,6 +6,7 @@
       "long": "Smart Assistant for Responsive Automation"
     },
     "common_error": "Ups! Terjadi kesalahan.",
+    "common_searchPlaceholder": "Cari activity atau jadwal",
     "validation_email_invalid": "Masukkan alamat email yang valid.",
     "validation_fullName_required": "Nama kamu wajib diisi.",
     "validation_password_min": "Kata sandi minimal 8 karakter.",
