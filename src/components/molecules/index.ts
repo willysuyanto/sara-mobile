@@ -5,3 +5,4 @@ export { default as FormInput } from './FormInput/FormInput';
 export { default as Input } from './Input/Input';
 export { default as Radio } from './Radio/Radio';
 export { default as RadioGroup } from './Radio/RadioGroup';
+export { default as SearchInput } from './SearchInput/SearchInput';

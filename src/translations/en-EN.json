@@ -6,6 +6,7 @@
       "long": "Smart Assistant for Responsive Automation"
     },
     "common_error": "Oops! Something went wrong.",
+    "common_searchPlaceholder": "Search activities or schedules",
     "validation_email_invalid": "Enter a valid email address.",
     "validation_fullName_required": "Your name is required.",
     "validation_password_min": "Password must be at least 8 characters.",
