@@ -1,0 +1,38 @@
+name: Auto Version
+
+on:
+  pull_request:
+    types:
+      - closed
+
+permissions:
+  contents: write
+
+concurrency:
+  group: auto-version
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Auto version bump
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Resolve bump type from branch
+        id: bump
+        env:
+          BRANCH: ${{ github.event.pull_request.head.ref }}
+        run: |
+          case "${BRANCH}" in
+            feat/*|feature/*) type="minor" ;;
+            chore/*|bugfix/*|fix/*|refactor/*|perf/*|style/*) type="patch" ;;
+            *) type="" ;;
+          esac
+          echo "type=${type}" >> "${GITHUB_OUTPUT}"
+
+      - name: Run version bump
+        if: steps.bump.outputs.type != ''
+        uses: ./.github/workflows/version-bump.yml
+        with:
+          bump: ${{ steps.bump.outputs.type }}

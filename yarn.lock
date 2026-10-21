@@ -5238,6 +5238,11 @@ human-signals@^2.1.0:
   resolved "https://registry.npmjs.org/human-signals/-/human-signals-2.1.0.tgz"
   integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
 
+husky@^9.1.7:
+  version "9.1.7"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-9.1.7.tgz#d46a38035d101b46a70456a850ff4201344c0b2d"
+  integrity sha512-5gs5ytaNjBrh5Ow3zrvdUUY+0VxIuWVL4i9irt6friV+BqdCfmV11CQTWMiBYWHbXhco+J1kHfTOUkePhCDvMA==
+
 i18next@^25.3.2:
   version "25.8.11"
   resolved "https://registry.npmjs.org/i18next/-/i18next-25.8.11.tgz"
@@ -7362,6 +7367,11 @@ react-native-asset@^2.3.0:
     "@deno/shim-deno" "~0.18.0"
     plist "^3.1.0"
     xcode "^3.0.1"
+
+react-native-cli-bump-version@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/react-native-cli-bump-version/-/react-native-cli-bump-version-1.5.1.tgz#12bc0aa6328413ed20b7a2599a4a908e0fff9945"
+  integrity sha512-C7Vss+BBD4iNMnn2YR00cU+GDDPZ+LDmIqWoh3FPwI/LBsJ/Vp5qanwtyVYRPcIe7Cg1PPB8WdeZ8XcnqF5Klw==
 
 react-native-gesture-handler@^2.27.2:
   version "2.30.0"
