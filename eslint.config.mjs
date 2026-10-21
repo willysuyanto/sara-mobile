@@ -178,6 +178,6 @@ export default defineConfig(
     },
   },
   {
-    ignores: ['plugins/**'],
+    ignores: ['coverage/**', 'plugins/**'],
   },
 );

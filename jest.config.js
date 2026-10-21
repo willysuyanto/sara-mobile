@@ -1,7 +1,9 @@
 module.exports = {
   collectCoverageFrom: [
-    '<rootDir>/src/Components/**/*.{jsx, tsx}',
-    '<rootDir>/src/App.{jsx, tsx}',
+    '<rootDir>/src/**/*.{js,jsx,ts,tsx}',
+    '!<rootDir>/src/**/*.{test,spec}.{js,jsx,ts,tsx}',
+    '!<rootDir>/src/tests/**',
+    '!<rootDir>/src/**/__mocks__/**',
   ],
   coverageReporters: ['html', 'text', 'text-summary', 'cobertura'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
