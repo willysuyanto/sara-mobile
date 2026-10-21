@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 concurrency:
   group: version-bump
@@ -15,28 +16,57 @@ concurrency:
 jobs:
   resolve-bump:
     name: Resolve version bump
-    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main'
     runs-on: ubuntu-latest
     timeout-minutes: 1
     outputs:
-      bump: ${{ steps.bump.outputs.type }}
+      action: ${{ steps.release.outputs.action }}
+      bump: ${{ steps.release.outputs.bump }}
     steps:
       - name: Resolve bump type from branch
-        id: bump
+        id: release
         env:
           BRANCH: ${{ github.event.pull_request.head.ref }}
         run: |
           case "${BRANCH}" in
-            feat/*|feature/*) type="minor" ;;
-            chore/*|bugfix/*|fix/*|refactor/*|perf/*|style/*) type="patch" ;;
-            *) type="" ;;
+            release/next) action="tag"; type="" ;;
+            feat/*|feature/*) action="bump"; type="minor" ;;
+            chore/*|bugfix/*|fix/*|refactor/*|perf/*|style/*) action="bump"; type="patch" ;;
+            *) action=""; type="" ;;
           esac
+          echo "action=${action}" >> "${GITHUB_OUTPUT}"
           echo "type=${type}" >> "${GITHUB_OUTPUT}"
 
   release:
     name: Auto version bump
     needs: resolve-bump
-    if: needs.resolve-bump.outputs.bump != ''
+    if: needs.resolve-bump.outputs.action == 'bump'
     uses: ./.github/workflows/version-bump.yml
     with:
       bump: ${{ needs.resolve-bump.outputs.bump }}
+
+  tag:
+    name: Tag release
+    needs: resolve-bump
+    if: needs.resolve-bump.outputs.action == 'tag'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout merged release
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.merge_commit_sha }}
+
+      - name: Create and push tag
+        run: |
+          VERSION="$(node -p "require('./package.json').version")"
+          TAG="v${VERSION}"
+          if git ls-remote --exit-code --tags origin "refs/tags/${TAG}" > /dev/null; then
+            echo "Tag ${TAG} already exists"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a "${TAG}" -m "${TAG}"
+          git push origin "${TAG}"

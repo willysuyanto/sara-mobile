@@ -10,10 +10,11 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   bump:
-    name: Bump, tag and push
+    name: Bump and open pull request
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -34,15 +35,47 @@ jobs:
         env:
           HUSKY: '0'
 
+      - name: Prepare release branch
+        id: branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BRANCH="release/next"
+          EXISTING_PR="$(gh pr list --base main --head "${BRANCH}" --state open --json url --jq '.[0].url')"
+          if [ -n "${EXISTING_PR}" ]; then
+            git fetch origin "${BRANCH}"
+            git switch --create "${BRANCH}" --track "origin/${BRANCH}"
+            CREATE_PR=false
+          else
+            if git ls-remote --exit-code --heads origin "${BRANCH}" > /dev/null; then
+              echo "Remote branch ${BRANCH} exists without an open pull request" >&2
+              exit 1
+            fi
+            git switch --create "${BRANCH}"
+            CREATE_PR=true
+          fi
+          echo "branch=${BRANCH}" >> "${GITHUB_OUTPUT}"
+          echo "create_pr=${CREATE_PR}" >> "${GITHUB_OUTPUT}"
+
       - name: Bump version
         run: node .github/scripts/bump-version.mjs --type "${{ inputs.bump }}"
 
-      - name: Commit, tag and push
+      - name: Commit, push and open pull request
+        env:
+          BRANCH: ${{ steps.branch.outputs.branch }}
+          CREATE_PR: ${{ steps.branch.outputs.create_pr }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           VERSION="$(node -p "require('./package.json').version")"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
           git commit -m "chore(release): v${VERSION}"
-          git tag -a "v${VERSION}" -m "v${VERSION}"
-          git push origin main --follow-tags
+          git push origin "${BRANCH}"
+          if [ "${CREATE_PR}" = true ]; then
+            gh pr create \
+              --base main \
+              --head "${BRANCH}" \
+              --title "chore(release): v${VERSION}" \
+              --body "Automated version bump."
+          fi
