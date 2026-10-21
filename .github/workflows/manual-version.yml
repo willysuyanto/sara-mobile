@@ -15,14 +15,13 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: version-bump
+  cancel-in-progress: false
+
 jobs:
   release:
     name: Manual version bump
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: main
     uses: ./.github/workflows/version-bump.yml
     with:
       bump: ${{ inputs.bump }}

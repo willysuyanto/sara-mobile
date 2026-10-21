@@ -9,21 +9,18 @@ permissions:
   contents: write
 
 concurrency:
-  group: auto-version
+  group: version-bump
   cancel-in-progress: false
 
 jobs:
-  release:
-    name: Auto version bump
+  resolve-bump:
+    name: Resolve version bump
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 1
+    outputs:
+      bump: ${{ steps.bump.outputs.type }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: main
-
       - name: Resolve bump type from branch
         id: bump
         env:
@@ -36,8 +33,10 @@ jobs:
           esac
           echo "type=${type}" >> "${GITHUB_OUTPUT}"
 
-      - name: Run version bump
-        if: steps.bump.outputs.type != ''
-        uses: ./.github/workflows/version-bump.yml
-        with:
-          bump: ${{ steps.bump.outputs.type }}
+  release:
+    name: Auto version bump
+    needs: resolve-bump
+    if: needs.resolve-bump.outputs.bump != ''
+    uses: ./.github/workflows/version-bump.yml
+    with:
+      bump: ${{ needs.resolve-bump.outputs.bump }}
