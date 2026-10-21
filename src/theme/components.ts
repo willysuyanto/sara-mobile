@@ -13,8 +13,8 @@ const generateComponentStyles = ({
     buttonCircle: {
       ...layout.justifyCenter,
       ...layout.itemsCenter,
-      ...backgrounds.purple100,
-      ...fonts.gray400,
+      ...backgrounds.surfaceSecondary,
+      ...fonts.textSecondary,
       borderRadius: 35,
       height: 64,
       width: 64,

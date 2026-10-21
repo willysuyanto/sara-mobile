@@ -1,0 +1,68 @@
+{
+  "saramobile": {
+    "common_appName": {
+      "full": "SARA Mobile",
+      "initials": "SM",
+      "long": "Smart Assistant for Responsive Automation"
+    },
+    "common_error": "Ups! Terjadi kesalahan.",
+    "validation_email_invalid": "Masukkan alamat email yang valid.",
+    "validation_fullName_required": "Nama kamu wajib diisi.",
+    "validation_password_min": "Kata sandi minimal 8 karakter.",
+    "validation_password_mismatch": "Kata sandi tidak cocok.",
+    "screen_landing": {
+      "body": "Temukan cara favorit baru untuk menyelesaikan berbagai hal.",
+      "cta": "Mulai sekarang",
+      "heading": "Siap untuk bekerja dengan cara yang sedikit lebih cerdas?"
+    },
+    "screen_login": {
+      "emailLabel": "Email",
+      "emailPlaceholder": "nama@email.com",
+      "forgotPassword": "Lupa kata sandi?",
+      "noAccount": "Belum punya akun?",
+      "passwordLabel": "Kata sandi",
+      "passwordPlaceholder": "Masukkan kata sandi",
+      "register": "Daftar",
+      "rememberMe": "Ingat saya",
+      "submit": "Masuk",
+      "subtitle": "SARA siap membantumu menyelesaikan hal-hal penting hari ini.",
+      "title": "Selamat datang kembali!"
+    },
+    "screen_register": {
+      "confirmPasswordHelper": "Minimal 8 karakter.",
+      "confirmPasswordLabel": "Konfirmasi kata sandi",
+      "confirmPasswordPlaceholder": "Konfirmasi kata sandi",
+      "emailLabel": "Email",
+      "emailPlaceholder": "nama@email.com",
+      "fullNameLabel": "Nama lengkap",
+      "fullNamePlaceholder": "Tulis nama kamu",
+      "haveAccount": "Sudah memiliki akun?",
+      "login": "Masuk",
+      "passwordHelper": "Minimal 8 karakter.",
+      "passwordLabel": "Kata sandi",
+      "passwordPlaceholder": "Buat kata sandi",
+      "submit": "Buat akun",
+      "subtitle": "Buat akun untuk mengatur dan menyusun prioritas tugasmu.",
+      "title": "Mulai perjalanan produktifmu"
+    },
+    "screen_forgot_password": {
+      "backToLoginQuestion": "Ingat kata sandimu?",
+      "emailLabel": "Email",
+      "emailPlaceholder": "nama@email.com",
+      "login": "Masuk",
+      "submit": "Kirim tautan reset",
+      "subtitle": "Masukkan emailmu dan kami akan mengirim tautan reset.",
+      "title": "Reset kata sandimu"
+    },
+    "screen_dashboard": {
+      "body": "Dasbor kamu sedang disiapkan. Semua yang kamu butuhkan akan ada di sini.",
+      "eyebrow": "DASBOR",
+      "title": "Semuanya siap"
+    },
+    "error_boundary": {
+      "title": "Ups! Terjadi kesalahan.",
+      "description": "Kami mohon maaf atas ketidaknyamanan ini. Silakan coba lagi nanti.",
+      "cta": "Muat ulang layar"
+    }
+  }
+}

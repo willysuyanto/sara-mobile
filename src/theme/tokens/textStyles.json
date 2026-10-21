@@ -1,0 +1,269 @@
+{
+  "fileName": "SARA Design",
+  "textStyles": [
+    {
+      "name": "SARA/Label/Primary",
+      "fontFamily": "Inter",
+      "fontWeight": "Bold",
+      "fontSize": 13,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Label/Secondary",
+      "fontFamily": "Inter",
+      "fontWeight": "Semi Bold",
+      "fontSize": 11,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Label/Muted",
+      "fontFamily": "Inter",
+      "fontWeight": "Medium",
+      "fontSize": 9,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": -0.30000001192092896
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Label/Link",
+      "fontFamily": "Inter",
+      "fontWeight": "Regular",
+      "fontSize": 10,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Label/Status",
+      "fontFamily": "Inter",
+      "fontWeight": "Semi Bold",
+      "fontSize": 9,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Label/Active",
+      "fontFamily": "Inter",
+      "fontWeight": "Bold",
+      "fontSize": 9,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Label/Control",
+      "fontFamily": "DM Sans",
+      "fontWeight": "Regular",
+      "fontSize": 9,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/System/Signal",
+      "fontFamily": "DM Sans",
+      "fontWeight": "Bold",
+      "fontSize": 11,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": -2
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Heading/Brand",
+      "fontFamily": "Inter",
+      "fontWeight": "Extra Bold",
+      "fontSize": 20,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": -0.699999988079071
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Heading/Secondary",
+      "fontFamily": "Inter",
+      "fontWeight": "Bold",
+      "fontSize": 25,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": -0.8999999761581421
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Heading/Primary",
+      "fontFamily": "Inter",
+      "fontWeight": "Bold",
+      "fontSize": 26,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": -0.800000011920929
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Heading/Tertiary",
+      "fontFamily": "Inter",
+      "fontWeight": "Bold",
+      "fontSize": 14,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": -0.30000001192092896
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Overline/Primary",
+      "fontFamily": "Inter",
+      "fontWeight": "Bold",
+      "fontSize": 9,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 1.2000000476837158
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Overline/Secondary",
+      "fontFamily": "Inter",
+      "fontWeight": "Bold",
+      "fontSize": 8,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 1.600000023841858
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Overline/Small",
+      "fontFamily": "DM Sans",
+      "fontWeight": "SemiBold",
+      "fontSize": 7,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0.800000011920929
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Accent/Primary",
+      "fontFamily": "Inter",
+      "fontWeight": "Bold",
+      "fontSize": 24,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": -0.8999999761581421
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Body/Primary",
+      "fontFamily": "Inter",
+      "fontWeight": "Regular",
+      "fontSize": 12,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Body/Secondary",
+      "fontFamily": "Inter",
+      "fontWeight": "Regular",
+      "fontSize": 11,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Caption/Primary",
+      "fontFamily": "Inter",
+      "fontWeight": "Regular",
+      "fontSize": 9,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Caption/Secondary",
+      "fontFamily": "DM Sans",
+      "fontWeight": "Regular",
+      "fontSize": 9,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Caption/Small",
+      "fontFamily": "DM Sans",
+      "fontWeight": "Regular",
+      "fontSize": 8,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Title/Disabled",
+      "fontFamily": "DM Sans",
+      "fontWeight": "SemiBold",
+      "fontSize": 13,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Title/Primary",
+      "fontFamily": "DM Sans",
+      "fontWeight": "SemiBold",
+      "fontSize": 13,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    },
+    {
+      "name": "SARA/Title/Secondary",
+      "fontFamily": "Manrope",
+      "fontWeight": "Bold",
+      "fontSize": 17,
+      "letterSpacing": {
+        "unit": "PIXELS",
+        "value": 0
+      },
+      "textCase": "ORIGINAL"
+    }
+  ]
+}

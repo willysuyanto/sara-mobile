@@ -6,19 +6,19 @@ import { initReactI18next } from 'react-i18next';
 import type { Language } from '@/hooks/language/schema';
 
 import en from './en-EN.json';
-import fr from './fr-FR.json';
+import id from './id-ID.json';
 
 export const defaultNS = 'saramobile';
 
 export const resources = {
   'en-EN': en,
-  'fr-FR': fr,
+  'id-ID': id,
 } as const satisfies Record<Language, unknown>;
 
 void i18n.use(initReactI18next).init({
   defaultNS,
-  fallbackLng: 'fr-FR',
-  lng: 'fr-FR',
+  fallbackLng: 'id-ID',
+  lng: 'id-ID',
   resources,
 });
 

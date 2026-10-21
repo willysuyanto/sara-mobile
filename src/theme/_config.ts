@@ -1,5 +1,12 @@
 import { DarkTheme, DefaultTheme } from '@react-navigation/native';
 
+import {
+  primitiveColors,
+  radius,
+  semanticColorsDark,
+  semanticColorsLight,
+  spacing,
+} from '@/theme/tokens';
 import type { ThemeConfiguration } from '@/theme/types/config';
 
 export const enum Variant {
@@ -7,50 +14,37 @@ export const enum Variant {
 }
 
 const colorsLight = {
-  gray100: '#DFDFDF',
-  gray200: '#A1A1A1',
-  gray400: '#4D4D4D',
-  gray50: '#EFEFEF',
-  gray800: '#303030',
-  purple100: '#E1E1EF',
-  purple50: '#1B1A23',
-  purple500: '#44427D',
-  red500: '#C13333',
-  skeleton: '#A1A1A1',
+  ...primitiveColors,
+  ...semanticColorsLight,
+  skeleton: primitiveColors.neutral200,
 } as const;
 
 const colorsDark = {
-  gray100: '#000000',
-  gray200: '#BABABA',
-  gray400: '#969696',
-  gray50: '#EFEFEF',
-  gray800: '#E0E0E0',
-  purple100: '#252732',
-  purple50: '#1B1A23',
-  purple500: '#A6A4F0',
-  red500: '#C13333',
-  skeleton: '#303030',
+  ...semanticColorsDark,
+  skeleton: primitiveColors.neutral800,
 } as const;
 
-const sizes = [12, 16, 24, 32, 40, 80] as const;
+const fontSizes = [12, 16, 24, 32, 40, 80] as const;
+
+const gutters = [...spacing, 32, 40, 80] as const;
 
 export const config = {
   backgrounds: colorsLight,
   borders: {
     colors: colorsLight,
-    radius: [4, 16],
+    radius,
     widths: [1, 2],
   },
   colors: colorsLight,
   fonts: {
     colors: colorsLight,
-    sizes,
+    sizes: fontSizes,
   },
-  gutters: sizes,
+  gutters,
   navigationColors: {
     ...DefaultTheme.colors,
-    background: colorsLight.gray50,
-    card: colorsLight.gray50,
+    background: colorsLight.surfaceNeutral,
+    card: colorsLight.surfaceNeutral,
   },
   variants: {
     dark: {
@@ -64,8 +58,8 @@ export const config = {
       },
       navigationColors: {
         ...DarkTheme.colors,
-        background: colorsDark.purple50,
-        card: colorsDark.purple50,
+        background: colorsDark.backgroundSecondary,
+        card: colorsDark.backgroundSecondary,
       },
     },
   },

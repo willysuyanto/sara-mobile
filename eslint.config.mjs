@@ -155,13 +155,13 @@ export default defineConfig(
     },
   },
   {
-    files: ['**/theme/*.ts'],
+    files: ['**/theme/*.ts', '**/theme/tokens/*.ts'],
     rules: {
       'no-magic-numbers': OFF,
     },
   },
   {
-    files: ['*.conf.js', '*.config.js', '*.setup.js'],
+    files: ['*.conf.js', '*.config.js', '*.setup.js', '**/__mocks__/**'],
     rules: {
       '@typescript-eslint/no-require-imports': OFF,
       '@typescript-eslint/no-unsafe-assignment': OFF,

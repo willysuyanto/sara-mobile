@@ -1,10 +1,11 @@
+import { Lucide } from '@react-native-vector-icons/lucide/static';
 import { useErrorBoundary } from 'react-error-boundary';
 import { useTranslation } from 'react-i18next';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 
 import { useTheme } from '@/theme';
 
-import { IconByVariant } from '@/components/atoms';
+import { Text } from '@/components/atoms';
 
 type Properties = {
   readonly onReset?: () => void;
@@ -25,16 +26,9 @@ function DefaultErrorScreen({ onReset = undefined }: Properties) {
         gutters.padding_16,
       ]}
     >
-      <IconByVariant
-        height={42}
-        path="fire"
-        stroke={colors.red500}
-        width={42}
-      />
-      <Text style={[fonts.gray800, fonts.bold, fonts.size_16]}>
-        {t('error_boundary.title')}
-      </Text>
-      <Text style={[fonts.gray800, fonts.size_12, fonts.alignCenter]}>
+      <Lucide color={colors.errorForeground} name="flame" size={42} />
+      <Text variant="titlePrimary">{t('error_boundary.title')}</Text>
+      <Text style={fonts.alignCenter} variant="bodyPrimary">
         {t('error_boundary.description')}
       </Text>
 
@@ -45,9 +39,7 @@ function DefaultErrorScreen({ onReset = undefined }: Properties) {
             onReset();
           }}
         >
-          <Text style={[fonts.gray800, fonts.size_16]}>
-            {t('error_boundary.cta')}
-          </Text>
+          <Text variant="titlePrimary">{t('error_boundary.cta')}</Text>
         </TouchableOpacity>
       ) : undefined}
     </View>
