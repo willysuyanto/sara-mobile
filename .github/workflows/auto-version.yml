@@ -21,7 +21,7 @@ jobs:
     timeout-minutes: 1
     outputs:
       action: ${{ steps.release.outputs.action }}
-      bump: ${{ steps.release.outputs.bump }}
+      bump: ${{ steps.release.outputs.type }}
     steps:
       - name: Resolve bump type from branch
         id: release
