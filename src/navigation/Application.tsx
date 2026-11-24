@@ -2,12 +2,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+import DashboardTabs from '@/navigation/DashboardTabs';
 import { Paths } from '@/navigation/paths';
 import type { RootStackParamList } from '@/navigation/types';
 import { useTheme } from '@/theme';
 
 import {
-  Dashboard,
   ForgotPassword,
   Landing,
   Login,
@@ -32,7 +32,7 @@ function ApplicationNavigator() {
             component={ForgotPassword}
             name={Paths.ForgotPassword}
           />
-          <Stack.Screen component={Dashboard} name={Paths.Dashboard} />
+          <Stack.Screen component={DashboardTabs} name={Paths.Dashboard} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

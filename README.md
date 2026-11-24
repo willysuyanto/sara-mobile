@@ -4,6 +4,8 @@
 
 Repositori ini adalah aplikasi **mobile** SARA yang dibangun menggunakan **React Native** dan **TypeScript**.
 
+Panduan pengembangan, arsitektur, dan sistem desain tersedia di [dokumentasi proyek](docs/README.md).
+
 ---
 
 ## 🚀 Fitur Utama
@@ -47,7 +49,7 @@ SaraMobile/
 │   ├── services/             # Lapisan komunikasi API (ky instance)
 │   ├── tests/                # Utilitas & setup testing
 │   ├── theme/                # Theme, warna, font, spacing
-│   ├── translations/         # File terjemahan i18next (en-EN, fr-FR)
+│   ├── translations/         # File terjemahan i18next (en-EN, id-ID)
 │   ├── App.tsx               # Komponen root aplikasi
 │   └── reactotron.config.ts  # Konfigurasi Reactotron (dev)
 ├── .env.example               # Template variabel lingkungan
@@ -92,10 +94,10 @@ cp .env.example .env
 Isi file `.env` pada root proyek:
 
 ```env
-API_URL=https://jsonplaceholder.typicode.com
+BASE_URL=https://jsonplaceholder.typicode.com
 ```
 
-> `API_URL` adalah base URL dari backend yang akan digunakan oleh `src/services/instance.ts`. Sesuaikan dengan endpoint backend SARA yang sebenarnya. Semua perubahan konfigurasi baru harus dicatat di `.env.example`.
+> `BASE_URL` adalah URL cadangan untuk backend. Untuk mengubah URL tanpa rilis aplikasi, publikasikan parameter String `base_url` dengan URL HTTPS di Firebase Remote Config. Lihat [panduan pengembangan](docs/DEVELOPMENT.md) untuk waktu penerapan perubahan.
 
 ### 3. Jalankan Metro Bundler
 

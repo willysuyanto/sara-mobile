@@ -35,8 +35,5 @@ jobs:
         env:
           HUSKY: '0'
 
-      - name: Lint
-        run: yarn lint
-
-      - name: Test
-        run: yarn test
+      - name: Verify
+        run: sh scripts/verify.sh

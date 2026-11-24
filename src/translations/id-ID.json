@@ -7,10 +7,19 @@
     },
     "common_error": "Ups! Terjadi kesalahan.",
     "common_searchPlaceholder": "Cari activity atau jadwal",
+    "common_statusDone": "Selesai",
+    "common_statusScheduled": "Terjadwal",
     "validation_email_invalid": "Masukkan alamat email yang valid.",
     "validation_fullName_required": "Nama kamu wajib diisi.",
     "validation_password_min": "Kata sandi minimal 8 karakter.",
     "validation_password_mismatch": "Kata sandi tidak cocok.",
+    "navigation_tabs": {
+      "activities": "Aktivitas",
+      "history": "Riwayat",
+      "home": "Beranda",
+      "sara": "SARA",
+      "settings": "Pengaturan"
+    },
     "screen_landing": {
       "body": "Temukan cara favorit baru untuk menyelesaikan berbagai hal.",
       "cta": "Mulai sekarang",
@@ -56,9 +65,24 @@
       "title": "Reset kata sandimu"
     },
     "screen_dashboard": {
-      "body": "Dasbor kamu sedang disiapkan. Semua yang kamu butuhkan akan ada di sini.",
-      "eyebrow": "DASBOR",
-      "title": "Semuanya siap"
+      "agendaBody": "2 Aktivitas menanti hari ini",
+      "agendaCta": "Buat Aktivitas",
+      "agendaEyebrow": "AGENDA HARI INI",
+      "agendaTitle": "Harimu, selangkah\nlebih teratur.",
+      "greeting": "Selamat pagi",
+      "openAgenda": "Buka agenda",
+      "privacyNote": "Hanya kamu yang melihat Aktivitas ini.",
+      "promptBody": "Tulis singkat, tinjau, lalu konfirmasi.",
+      "promptTitle": "Punya rencana? Ceritakan ke SARA.",
+      "seeAll": "Lihat semua",
+      "todayTitle": "Aktivitas hari ini",
+      "upcomingItemTitle": "Belajar algoritma",
+      "upcomingMeta": "Kamis · 10.00 WIB",
+      "upcomingTitle": "Akan datang"
+    },
+    "screen_placeholder": {
+      "body": "Layar ini sedang disiapkan dan akan segera hadir.",
+      "title": "Segera hadir"
     },
     "error_boundary": {
       "title": "Ups! Terjadi kesalahan.",

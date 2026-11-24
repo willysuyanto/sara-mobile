@@ -7,10 +7,19 @@
     },
     "common_error": "Oops! Something went wrong.",
     "common_searchPlaceholder": "Search activities or schedules",
+    "common_statusDone": "Done",
+    "common_statusScheduled": "Scheduled",
     "validation_email_invalid": "Enter a valid email address.",
     "validation_fullName_required": "Your name is required.",
     "validation_password_min": "Password must be at least 8 characters.",
     "validation_password_mismatch": "Passwords do not match.",
+    "navigation_tabs": {
+      "activities": "Activities",
+      "history": "History",
+      "home": "Home",
+      "sara": "SARA",
+      "settings": "Settings"
+    },
     "screen_landing": {
       "body": "Discover a new favorite way to get things done.",
       "cta": "Get started",
@@ -56,9 +65,24 @@
       "title": "Reset your password"
     },
     "screen_dashboard": {
-      "body": "Your dashboard is on its way. Everything you need will live here.",
-      "eyebrow": "DASHBOARD",
-      "title": "You're all set"
+      "agendaBody": "2 activities waiting today",
+      "agendaCta": "Create activity",
+      "agendaEyebrow": "TODAY'S AGENDA",
+      "agendaTitle": "Your day, one step more organised.",
+      "greeting": "Good morning",
+      "openAgenda": "Open agenda",
+      "privacyNote": "Only you can see this activity.",
+      "promptBody": "Write it briefly, review, then confirm.",
+      "promptTitle": "Got a plan? Tell SARA.",
+      "seeAll": "See all",
+      "todayTitle": "Today's activities",
+      "upcomingItemTitle": "Learn algorithms",
+      "upcomingMeta": "Thursday · 10.00 WIB",
+      "upcomingTitle": "Upcoming"
+    },
+    "screen_placeholder": {
+      "body": "This screen is being prepared and will be here soon.",
+      "title": "Coming soon"
     },
     "error_boundary": {
       "title": "Oops! Something went wrong.",

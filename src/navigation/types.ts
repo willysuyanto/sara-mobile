@@ -14,3 +14,11 @@ export type RootStackParamList = {
   [Paths.Register]: undefined;
   [Paths.Splashscreen]: undefined;
 };
+
+export type RootTabParamList = {
+  [Paths.Aktivitas]: undefined;
+  [Paths.Beranda]: undefined;
+  [Paths.Pengaturan]: undefined;
+  [Paths.Riwayat]: undefined;
+  [Paths.Sara]: undefined;
+};

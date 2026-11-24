@@ -8,7 +8,7 @@ Guide for AI agents and contributors working in this repository.
 
 This repository is the **React Native mobile app** (not the backend). It is an early-stage app bootstrapped from a community template, so some scaffolding (e.g. the `jsonplaceholder` API URL) is placeholder code to be replaced with real SARA features.
 
-Project docs: [`README.md`](./README.md) (setup, in Indonesian), [`DESIGN.md`](./DESIGN.md) (design system).
+Project docs: [`docs/README.md`](./docs/README.md). Follow the [AI coding harness](./docs/AI-HARNESS.md) for task intake, verification, and handoff. Read scoped `AGENTS.md` files before editing their directories.
 
 ## Tech stack
 
@@ -16,7 +16,7 @@ Project docs: [`README.md`](./README.md) (setup, in Indonesian), [`DESIGN.md`](.
 - **Language**: TypeScript `5.x`, strict.
 - **Navigation**: `@react-navigation/native` + `@react-navigation/stack`.
 - **Server state**: `@tanstack/react-query` `^5`.
-- **HTTP**: `ky` (`src/services/instance.ts`, base URL from `process.env.API_URL`).
+- **HTTP**: `ky` (`src/services/instance.ts`, base URL from Firebase Remote Config `base_url` or `process.env.BASE_URL`).
 - **Local storage**: `react-native-mmkv` `^4` (synchronous KV).
 - **Validation**: `zod` `^4`.
 - **Forms**: `react-hook-form` `^7` + `@hookform/resolvers` `^6` (zod resolver).
@@ -25,7 +25,7 @@ Project docs: [`README.md`](./README.md) (setup, in Indonesian), [`DESIGN.md`](.
 - **Animation/gestures**: `react-native-reanimated` `^4`, `react-native-worklets`, `react-native-gesture-handler`.
 - **UI/assets**: `react-native-svg` + `react-native-svg-transformer`, `safe-area-context`, `screens`, `masked-view`.
 - **Errors**: `react-error-boundary`.
-- **Native modules**: `@react-native-firebase/{app,messaging}`, `react-native-permissions`.
+- **Native modules**: `@react-native-firebase/{app,messaging,remote-config}`, `react-native-permissions`.
 - **Testing**: Jest `^30` + `@testing-library/react-native`.
 - **Lint/format**: ESLint `9` (flat config) + Prettier `3`.
 - **Dev tools**: Reactotron (+ MMKV & React Query plugins).
@@ -49,7 +49,7 @@ yarn lint:type-check    # tsc
 yarn lint:fix           # eslint --fix && prettier --write
 ```
 
-Always run `yarn lint` **and** `yarn test` before considering a task done. Do not commit unless explicitly asked.
+Run `sh scripts/verify.sh` before handing off a change. It runs `yarn lint`, `yarn test --runInBand`, and a Markdown format check for `docs/`. Do not commit unless explicitly asked.
 
 ## Project structure
 
@@ -63,7 +63,7 @@ src/
 ├── screens/                # screen components (barrel index.ts)
 ├── services/               # ky HTTP instance, firebase messaging
 ├── theme/                  # theme system + design tokens (see src/theme/AGENTS.md)
-├── translations/           # i18next setup + en-EN / fr-FR JSON
+├── translations/           # i18next setup + en-EN / id-ID JSON
 ├── tests/                  # test wrappers + native mocks (see src/tests/AGENTS.md)
 └── reactotron.config.ts    # Reactotron setup (dev)
 ```
@@ -79,7 +79,7 @@ Path alias: **`@/*` → `./src/*`** (configured in `tsconfig.json` and `babel.co
   - `hooks/domain/<entity>/use<Entity>.ts` — TanStack Query hooks (query keys as a `const enum`, query + invalidation helpers).
   - Access config via `process.env.*` (inlined by `babel-plugin-inline-dotenv`), never hardcode URLs.
 - **Navigation**: register screens in `src/navigation/Application.tsx` using `Paths` (`paths.ts`) and the `RootStackParamList` type (`types.ts`). Screen names come from `Paths`.
-- **i18n**: `src/translations/index.ts` initializes i18next (`defaultNS: 'saramobile'`, fallback `fr-FR`). Add keys under the `saramobile` namespace in **both** `en-EN.json` and `fr-FR.json`. Use the `capitalize` formatter for capitalization. Translation keys are typed via `src/translations/i18next.d.ts` (module augmentation) — keep the JSON shape and the augmentation in sync.
+- **i18n**: `src/translations/index.ts` initializes i18next (`defaultNS: 'saramobile'`, fallback `id-ID`). Add keys under the `saramobile` namespace in **both** `en-EN.json` and `id-ID.json`. Use the `capitalize` formatter for capitalization. Translation keys are typed via `src/translations/i18next.d.ts` (module augmentation) — keep the JSON shape and the augmentation in sync.
 - **Components** are grouped by atomic-design level with a barrel `index.ts` exporting each. Import via `@/components/...`.
 - **Forms**: `useZodForm` (`src/hooks/form/useZodForm.ts`) wraps `useForm` with the zod resolver — field values are typed from the schema **input**, submitted values from its **output** (coercions/transforms applied). `FormInput` (`src/components/molecules/FormInput`) binds a field to the `Input` molecule and maps the field error to the input's error state.
 - **Theme** is consumed with the `useTheme()` hook; see `DESIGN.md` and `src/theme/AGENTS.md`.
@@ -87,7 +87,7 @@ Path alias: **`@/*` → `./src/*`** (configured in `tsconfig.json` and `babel.co
 ## Environment
 
 - `.env` is local and git-ignored. Copy `.env.example` → `.env` and set values.
-- Current var: `API_URL` (used by `src/services/instance.ts`).
+- Current var: `BASE_URL` (fallback for `src/services/instance.ts`).
 - **Any new env var must also be added to `.env.example`.**
 
 ## Conventions & guardrails
