@@ -20,6 +20,19 @@
       "sara": "SARA",
       "settings": "Pengaturan"
     },
+    "screen_activity": {
+      "heading": "Satu tempat untuk\nsemua rencanamu.",
+      "intro": "Kelola Aktivitas dengan caramu sendiri.",
+      "items": {
+        "algorithms": { "time": "10.00 · 8 Okt", "title": "Belajar algoritma" },
+        "meeting": { "time": "13.00", "title": "Meeting kelompok" },
+        "network": { "time": "16.00", "title": "Kerjakan tugas jaringan" },
+        "report": { "time": "15.00 · 9 Okt", "title": "Submit laporan" }
+      },
+      "today": "Hari ini",
+      "todayDate": "7 Okt",
+      "upcoming": "Akan datang"
+    },
     "screen_landing": {
       "body": "Temukan cara favorit baru untuk menyelesaikan berbagai hal.",
       "cta": "Mulai sekarang",

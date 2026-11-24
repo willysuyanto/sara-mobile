@@ -13,11 +13,15 @@ const CHECK_BOX_SIZE = 20;
 const CHIP_DOT_SIZE = 3;
 const CHIP_PADDING_HORIZONTAL = 6;
 const CHIP_PADDING_VERTICAL = 3;
+const SPACIOUS_MIN_HEIGHT = 111;
+const SPACIOUS_TITLE_LINE_HEIGHT = 20;
+const SPACIOUS_TITLE_SIZE = 13;
 
 type Properties = {
   readonly done?: boolean;
   readonly onPress?: () => void;
   readonly reminded?: boolean;
+  readonly spacious?: boolean;
   readonly time: string;
   readonly title: string;
 };
@@ -30,6 +34,7 @@ function ActivityCard({
   done = false,
   onPress = undefined,
   reminded = false,
+  spacious = false,
   time,
   title,
 }: Properties) {
@@ -49,8 +54,10 @@ function ActivityCard({
       style={[
         layout.row,
         gutters.gap_12,
-        gutters.padding_16,
+        gutters.paddingVertical_16,
+        spacious ? gutters.paddingHorizontal_14 : gutters.paddingHorizontal_16,
         borders.rounded_13,
+        spacious && { minHeight: SPACIOUS_MIN_HEIGHT },
         {
           backgroundColor: done ? colors.surfaceNeutral : colors.surfacePrimary,
           borderColor: colors.borderPrimary,
@@ -63,6 +70,7 @@ function ActivityCard({
           layout.itemsCenter,
           layout.justifyCenter,
           borders.rounded_6,
+          spacious && gutters.marginTop_1,
           {
             backgroundColor: done
               ? colors.successBackground
@@ -83,18 +91,34 @@ function ActivityCard({
         ) : undefined}
       </View>
 
-      <View style={[layout.flex_1, gutters.gap_5]}>
+      <View style={[layout.flex_1, !spacious && gutters.gap_5]}>
         <Text
           color={titleColor}
-          style={done ? { textDecorationLine: 'line-through' } : undefined}
+          style={[
+            done && { textDecorationLine: 'line-through' },
+            spacious && {
+              fontSize: SPACIOUS_TITLE_SIZE,
+              lineHeight: SPACIOUS_TITLE_LINE_HEIGHT,
+            },
+          ]}
           variant="labelButtonSmall"
         >
           {title}
         </Text>
 
-        <View style={[layout.row, layout.itemsCenter, gutters.gap_5]}>
+        <View
+          style={[
+            layout.row,
+            layout.itemsCenter,
+            gutters.gap_5,
+            spacious && gutters.marginTop_6,
+          ]}
+        >
           <Lucide color={metaColor} name="clock" size={BELL_ICON_SIZE} />
-          <Text color={metaColor} variant="captionPrimary">
+          <Text
+            color={metaColor}
+            variant={spacious ? 'brandCaption' : 'captionPrimary'}
+          >
             {time}
           </Text>
           {reminded ? (
@@ -108,6 +132,7 @@ function ActivityCard({
             layout.itemsCenter,
             borders.rounded_5,
             gutters.gap_4,
+            spacious && gutters.marginTop_14,
             {
               alignSelf: 'flex-start',
               backgroundColor: chipBackground,
@@ -132,7 +157,7 @@ function ActivityCard({
         </View>
       </View>
 
-      <View style={[layout.justifyCenter]}>
+      <View style={spacious ? gutters.marginTop_3 : layout.justifyCenter}>
         <Lucide
           color={colors.textSecondary}
           name="chevron-right"

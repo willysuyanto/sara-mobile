@@ -1,3 +1,4 @@
+export { default as Activity } from './Activity/Activity';
 export { default as Dashboard } from './Dashboard/Dashboard';
 export { default as ForgotPassword } from './ForgotPassword/ForgotPassword';
 export { default as Landing } from './Landing/Landing';

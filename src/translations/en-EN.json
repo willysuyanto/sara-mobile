@@ -20,6 +20,22 @@
       "sara": "SARA",
       "settings": "Settings"
     },
+    "screen_activity": {
+      "heading": "One place for\nall your plans.",
+      "intro": "Manage activities your way.",
+      "items": {
+        "algorithms": { "time": "10:00 · Oct 8", "title": "Study algorithms" },
+        "meeting": { "time": "13:00", "title": "Group meeting" },
+        "network": {
+          "time": "16:00",
+          "title": "Work on the networking assignment"
+        },
+        "report": { "time": "15:00 · Oct 9", "title": "Submit the report" }
+      },
+      "today": "Today",
+      "todayDate": "Oct 7",
+      "upcoming": "Upcoming"
+    },
     "screen_landing": {
       "body": "Discover a new favorite way to get things done.",
       "cta": "Get started",

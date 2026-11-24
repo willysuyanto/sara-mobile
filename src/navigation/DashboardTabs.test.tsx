@@ -34,4 +34,15 @@ describe('DashboardTabs', () => {
 
     expect(screen.getByText('Segera hadir')).toBeTruthy();
   });
+
+  it('opens the Activity screen from its bottom tab', () => {
+    renderTabs();
+
+    fireEvent.press(screen.getByRole('tab', { name: 'Aktivitas' }));
+
+    expect(
+      screen.getByRole('tab', { name: 'Aktivitas', selected: true }),
+    ).toBeOnTheScreen();
+    expect(screen.getByText('Akan datang')).toBeOnTheScreen();
+  });
 });

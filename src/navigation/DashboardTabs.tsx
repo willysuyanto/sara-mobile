@@ -7,7 +7,7 @@ import { Paths } from '@/navigation/paths';
 import type { RootTabParamList } from '@/navigation/types';
 
 import { BottomNavigation } from '@/components/organisms';
-import { Dashboard, Placeholder } from '@/screens';
+import { Activity, Dashboard, Placeholder } from '@/screens';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
@@ -30,7 +30,7 @@ function DashboardTabs() {
         options={{ title: t('navigation_tabs.home') }}
       />
       <Tab.Screen
-        component={Placeholder}
+        component={Activity}
         name={Paths.Aktivitas}
         options={{ title: t('navigation_tabs.activities') }}
       />
