@@ -2017,6 +2017,28 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
+  - RNKeychain (11.0.0):
+    - hermes-engine
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-Core-prebuilt
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - ReactNativeDependencies
+    - Yoga
   - RNPermissions (5.6.2):
     - hermes-engine
     - RCTRequired
@@ -2361,6 +2383,7 @@ DEPENDENCIES:
   - "RNFBMessaging (from `../node_modules/@react-native-firebase/messaging`)"
   - "RNFBRemoteConfig (from `../node_modules/@react-native-firebase/remote-config`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNKeychain (from `../node_modules/react-native-keychain`)
   - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
@@ -2536,6 +2559,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-firebase/remote-config"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNKeychain:
+    :path: "../node_modules/react-native-keychain"
   RNPermissions:
     :path: "../node_modules/react-native-permissions"
   RNReanimated:
@@ -2632,6 +2657,7 @@ SPEC CHECKSUMS:
   RNFBMessaging: 30aba4ef97b56246a1e4f5226e250e0ec9b5bb20
   RNFBRemoteConfig: 11b7ca6c6d00e17d6b33772d11ee7f47518f372a
   RNGestureHandler: d9e942967ed2a9a555c41591c4ee9dfeabee1f01
+  RNKeychain: 4cf8a126c1f8ef6000fb2aa839de090f2e18ecda
   RNPermissions: 93db09b9c917e56a6193759f9e67632578ec5846
   RNReanimated: e8365b1438aba0119ea2656b56e70b9a1708b930
   RNScreens: 6c5b8c41580fe6b54ee1b332c96b782ee360e73f

@@ -117,7 +117,7 @@ describe('SettingScreen', () => {
     fireEvent.press(screen.getByRole('button', { name: 'Keluar dari akun' }));
     expect(alert).toHaveBeenCalledWith(
       'Keluar dari akun?',
-      'Sesi pratinjaumu akan berakhir.',
+      'Kamu perlu masuk lagi untuk mengakses akunmu.',
       [
         { style: 'cancel', text: 'Batal' },
         { onPress: onSignOut, style: 'destructive', text: 'Keluar' },

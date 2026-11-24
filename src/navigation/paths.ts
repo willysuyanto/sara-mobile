@@ -9,5 +9,5 @@ export const enum Paths {
   Register = 'register',
   Riwayat = 'riwayat',
   Sara = 'sara',
-  Splashscreen = 'splashscreen',
+  VerifyEmail = 'verifyEmail',
 }

@@ -5,13 +5,21 @@
       "initials": "SM",
       "long": "Smart Assistant for Responsive Automation"
     },
+    "common_auth": {
+      "restoreError": "We couldn’t check your session.",
+      "retry": "Try again",
+      "signOutError": "Couldn’t sign out. Try again."
+    },
     "common_error": "Oops! Something went wrong.",
     "common_searchPlaceholder": "Search activities or schedules",
     "common_statusDone": "Done",
     "common_statusScheduled": "Scheduled",
+    "validation_code_invalid": "Enter the 6-digit code.",
     "validation_email_invalid": "Enter a valid email address.",
+    "validation_fullName_invalid": "Enter a valid full name.",
     "validation_fullName_required": "Your name is required.",
-    "validation_password_min": "Password must be at least 8 characters.",
+    "validation_password_invalid": "Choose a different password.",
+    "validation_password_required": "Enter your password.",
     "validation_password_mismatch": "Passwords do not match.",
     "navigation_tabs": {
       "activities": "Activities",
@@ -65,6 +73,7 @@
       "heading": "Ready to work a little smarter?"
     },
     "screen_login": {
+      "invalidCredentials": "Incorrect email or password.",
       "emailLabel": "Email",
       "emailPlaceholder": "nama@email.com",
       "forgotPassword": "Forgot password?",
@@ -72,13 +81,13 @@
       "passwordLabel": "Kata sandi",
       "passwordPlaceholder": "Masukkan kata sandi",
       "register": "Register",
-      "rememberMe": "Ingat saya",
       "submit": "Masuk",
       "subtitle": "SARA is ready to help you get today's important things done.",
       "title": "Welcome back!"
     },
     "screen_register": {
-      "confirmPasswordHelper": "At least 8 characters.",
+      "invalidDetails": "Check your registration details and try again.",
+      "confirmPasswordHelper": "Optional. Must match the password above.",
       "confirmPasswordLabel": "Konfirmasi kata sandi",
       "confirmPasswordPlaceholder": "Konfirmasi kata sandi",
       "emailLabel": "Email",
@@ -87,12 +96,22 @@
       "fullNamePlaceholder": "Tulis nama kamu",
       "haveAccount": "Already have an account?",
       "login": "Login",
-      "passwordHelper": "At least 8 characters.",
       "passwordLabel": "Kata sandi",
       "passwordPlaceholder": "Buat kata sandi",
       "submit": "Buat akun",
       "subtitle": "Create an account to organize and prioritize your tasks.",
       "title": "Start your productive journey"
+    },
+    "screen_verify_email": {
+      "codeLabel": "Verification code",
+      "codePlaceholder": "000000",
+      "registerEmailFailed": "Your account was created, but we couldn't send the verification email.",
+      "resend": "Resend code",
+      "resendFallback": "If this email needs verification, a code will be sent when allowed.",
+      "sentTo": "Check {{email}} for the 6-digit code.",
+      "submit": "Verify email",
+      "subtitle": "Enter your verification code to continue.",
+      "title": "Verify your email"
     },
     "screen_forgot_password": {
       "backToLoginQuestion": "Remember your password?",
@@ -153,13 +172,12 @@
         "updateError": "Couldn't update notifications. Please try again."
       },
       "privateSession": "Private session",
-      "privateSessionDetail": "Account access · provider-neutral",
-      "profileStatus": "Active session · demo account",
+      "privateSessionDetail": "Session stored securely on this device",
       "prototypeNote": "This is a candidate prototype. Sample data is only kept during the preview session.",
       "prototypeVersion": "Candidate UI Design & Prototype v0.1",
       "signOut": "Sign out",
       "signOutConfirm": "Sign out",
-      "signOutMessage": "This will end your preview session.",
+      "signOutMessage": "You’ll need to sign in again to access your account.",
       "signOutTitle": "Sign out?"
     },
     "screen_placeholder": {

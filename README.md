@@ -22,7 +22,7 @@ Panduan pengembangan, arsitektur, dan sistem desain tersedia di [dokumentasi pro
 | Framework | [React Native](https://reactnative.dev/) `0.84.0` dengan [React](https://react.dev/) `19.x` |
 | Bahasa | [TypeScript](https://www.typescriptlang.org/) `5.x` |
 | Navigasi | [React Navigation](https://reactnavigation.org/) (native & stack) |
-| Manajemen State / Server State | [TanStack Query](https://tanstack.com/query) `^5.x` |
+| Manajemen State / Server State | [Zustand](https://zustand.docs.pmnd.rs/) untuk sesi, [TanStack Query](https://tanstack.com/query) `^5.x` untuk data server |
 | HTTP Client | [ky](https://github.com/sindresorhus/ky) `^1.x` |
 | Penyimpanan Lokal | [react-native-mmkv](https://github.com/mrousavy/react-native-mmkv) `^4.x` |
 | Animasi & Gesture | [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/) `^4.x`, [react-native-gesture-handler](https://docs.swmansion.com/react-native-gesture-handler/) `^2.x`, [react-native-worklets](https://docs.swmansion.com/react-native-worklets/) `^0.x` |
@@ -94,10 +94,10 @@ cp .env.example .env
 Isi file `.env` pada root proyek:
 
 ```env
-BASE_URL=https://jsonplaceholder.typicode.com
+BASE_URL=http://localhost:3000/api
 ```
 
-> `BASE_URL` adalah URL cadangan untuk backend. Untuk mengubah URL tanpa rilis aplikasi, publikasikan parameter String `base_url` dengan URL HTTPS di Firebase Remote Config. Lihat [panduan pengembangan](docs/DEVELOPMENT.md) untuk waktu penerapan perubahan.
+> Gunakan `http://10.0.2.2:3000/api` pada emulator Android. Untuk build rilis, gunakan HTTPS lewat parameter String `base_url` di Firebase Remote Config atau `BASE_URL` sebagai cadangan. Lihat [panduan pengembangan](docs/DEVELOPMENT.md) untuk pengujian autentikasi.
 
 ### 3. Jalankan Metro Bundler
 

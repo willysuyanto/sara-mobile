@@ -6,14 +6,17 @@ import {
 const fallbackUrl = 'https://fallback.example.test/api';
 const remoteUrl = 'https://remote.example.test/v1/';
 const originalBaseUrl = process.env.BASE_URL;
+const originalDevelopment = __DEV__;
 
 beforeEach(() => {
   jest.clearAllMocks();
   jest.mocked(fetchAndActivate).mockResolvedValue(true);
   process.env.BASE_URL = fallbackUrl;
+  Object.assign(globalThis, { __DEV__: false });
 });
 
 afterEach(() => {
+  Object.assign(globalThis, { __DEV__: originalDevelopment });
   if (originalBaseUrl === undefined) {
     delete process.env.BASE_URL;
   } else {
@@ -69,4 +72,20 @@ it('keeps the previously activated URL when Firebase fails', async () => {
   jest.mocked(getString).mockReturnValue(remoteUrl);
 
   expect(await getRequestUrl()).toBe(`${remoteUrl}users/1`);
+});
+
+it('uses the local environment URL instead of Remote Config in debug builds', async () => {
+  Object.assign(globalThis, { __DEV__: true });
+  process.env.BASE_URL = 'http://10.0.2.2:3000/api/';
+  jest.mocked(getString).mockReturnValue(remoteUrl);
+
+  expect(await getRequestUrl()).toBe('http://10.0.2.2:3000/api/users/1');
+  expect(fetchAndActivate).not.toHaveBeenCalled();
+});
+
+it('rejects cleartext fallback URLs in release builds', async () => {
+  process.env.BASE_URL = 'http://localhost:3000/api';
+  jest.mocked(getString).mockReturnValue('');
+
+  await expect(getRequestUrl()).rejects.toThrow('Set a valid API base URL');
 });

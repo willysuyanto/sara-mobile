@@ -1,8 +1,9 @@
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Pressable, View } from 'react-native';
 
 import { useAuth } from '@/hooks';
+import { AuthApiError } from '@/hooks/domain/auth/authService';
 import { loginSchema } from '@/hooks/domain/auth/schema';
 import { useZodForm } from '@/hooks/form';
 import { Paths } from '@/navigation/paths';
@@ -10,30 +11,54 @@ import type { RootScreenProps } from '@/navigation/types';
 import { useTheme } from '@/theme';
 
 import { Button, Text } from '@/components/atoms';
-import { FormCheckbox, FormInput } from '@/components/molecules';
+import { FormInput } from '@/components/molecules';
 import { AuthTemplate } from '@/components/templates';
 
-function Login({ navigation }: RootScreenProps<Paths.Login>) {
+const EMAIL_NOT_VERIFIED_STATUS = 403;
+const GENERIC_ERROR_MESSAGE = 'common_error';
+const INVALID_CREDENTIALS_STATUS = 401;
+const INVALID_INPUT_STATUS = 422;
+
+const toErrorMessage = (error: unknown, fallback: string) =>
+  error instanceof AuthApiError &&
+  error.message &&
+  error.message !== GENERIC_ERROR_MESSAGE
+    ? error.message
+    : fallback;
+
+function Login({ navigation, route }: RootScreenProps<Paths.Login>) {
   const { t } = useTranslation();
   const { gutters, layout } = useTheme();
   const { useLogin } = useAuth();
   const login = useLogin();
+  const [errorMessage, setErrorMessage] = useState<string>();
 
   const { control, formState, handleSubmit } = useZodForm(loginSchema, {
     defaultValues: {
-      email: '',
+      email: route.params?.email ?? '',
       password: '',
-      rememberMe: false,
     },
   });
 
   const onSubmit = handleSubmit((values) => {
+    setErrorMessage(undefined);
     login.mutate(values, {
-      onSuccess: () => {
-        navigation.reset({
-          index: 0,
-          routes: [{ name: Paths.Dashboard }],
-        });
+      onError: (error) => {
+        if (
+          error instanceof AuthApiError &&
+          error.status === EMAIL_NOT_VERIFIED_STATUS &&
+          error.code === 'EMAIL_NOT_VERIFIED'
+        ) {
+          navigation.navigate(Paths.VerifyEmail, { email: values.email });
+          return;
+        }
+        setErrorMessage(
+          error instanceof AuthApiError &&
+            (error.status === INVALID_CREDENTIALS_STATUS ||
+              error.status === INVALID_INPUT_STATUS)
+            ? t('screen_login.invalidCredentials')
+            : toErrorMessage(error, t(GENERIC_ERROR_MESSAGE)),
+        );
       },
     });
   });
@@ -94,17 +119,10 @@ function Login({ navigation }: RootScreenProps<Paths.Login>) {
         style={[
           layout.row,
           layout.itemsCenter,
-          layout.justifyBetween,
+          layout.justifyEnd,
           gutters.marginTop_4,
         ]}
       >
-        <FormCheckbox
-          control={control}
-          label={t('screen_login.rememberMe')}
-          name="rememberMe"
-          testID="login-remember"
-        />
-
         <Pressable
           accessibilityRole="button"
           onPress={goToForgotPassword}
@@ -115,6 +133,18 @@ function Login({ navigation }: RootScreenProps<Paths.Login>) {
           </Text>
         </Pressable>
       </View>
+
+      {errorMessage ? (
+        <Text
+          accessibilityLiveRegion="polite"
+          accessibilityRole="alert"
+          color="errorForeground"
+          testID="login-error"
+          variant="bodySecondary"
+        >
+          {errorMessage}
+        </Text>
+      ) : undefined}
 
       <Button
         disabled={!formState.isValid}

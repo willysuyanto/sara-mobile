@@ -9,3 +9,4 @@ export { default as PlannerScreen } from './Planner/PlannerScreen';
 export { default as Register } from './Register/Register';
 export { default as SettingScreen } from './Setting/SettingScreen';
 export { default as Splashscreen } from './Splashscreen/Splashscreen';
+export { default as VerifyEmail } from './VerifyEmail/VerifyEmail';

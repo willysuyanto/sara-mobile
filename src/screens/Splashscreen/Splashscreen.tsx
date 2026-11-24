@@ -1,46 +1,23 @@
-import { useQuery } from '@tanstack/react-query';
-import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { StatusBar, View } from 'react-native';
+import { ActivityIndicator, StatusBar, View } from 'react-native';
 
-import { Paths } from '@/navigation/paths';
-import type { RootScreenProps } from '@/navigation/types';
 import { useTheme } from '@/theme';
 
-import { IconByVariant, Text } from '@/components/atoms';
+import { Button, IconByVariant, Text } from '@/components/atoms';
 
 const LOGO_HEIGHT = 56;
 const MARK_SIZE = 28;
-const SPLASH_DURATION_MS = 2000;
 const TAGLINE_WIDTH = 226;
 
-export { SPLASH_DURATION_MS };
-
-function Splashscreen({ navigation }: RootScreenProps<Paths.Splashscreen>) {
+function Splashscreen({
+  failed,
+  onRetry,
+}: {
+  readonly failed: boolean;
+  readonly onRetry: () => void;
+}) {
   const { backgrounds, borders, colors, gutters, layout } = useTheme();
   const { t } = useTranslation();
-
-  const { isSuccess } = useQuery({
-    queryFn: () => Promise.resolve(true),
-    queryKey: ['startup'],
-  });
-
-  useEffect(() => {
-    if (!isSuccess) {
-      return undefined;
-    }
-
-    const timer = setTimeout(() => {
-      navigation.reset({
-        index: 0,
-        routes: [{ name: Paths.Landing }],
-      });
-    }, SPLASH_DURATION_MS);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [isSuccess, navigation]);
 
   return (
     <View
@@ -97,6 +74,16 @@ function Splashscreen({ navigation }: RootScreenProps<Paths.Splashscreen>) {
         >
           {t('common_appName.long')}
         </Text>
+        {failed ? (
+          <>
+            <Text accessibilityRole="alert" color="brandForeground">
+              {t('common_auth.restoreError')}
+            </Text>
+            <Button label={t('common_auth.retry')} onPress={onRetry} />
+          </>
+        ) : (
+          <ActivityIndicator color={colors.brandForeground} />
+        )}
       </View>
     </View>
   );

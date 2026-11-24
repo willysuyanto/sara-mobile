@@ -5,13 +5,21 @@
       "initials": "SM",
       "long": "Smart Assistant for Responsive Automation"
     },
+    "common_auth": {
+      "restoreError": "Kami tidak dapat memeriksa sesimu.",
+      "retry": "Coba lagi",
+      "signOutError": "Tidak dapat keluar. Coba lagi."
+    },
     "common_error": "Ups! Terjadi kesalahan.",
     "common_searchPlaceholder": "Cari activity atau jadwal",
     "common_statusDone": "Selesai",
     "common_statusScheduled": "Terjadwal",
+    "validation_code_invalid": "Masukkan kode 6 digit.",
     "validation_email_invalid": "Masukkan alamat email yang valid.",
+    "validation_fullName_invalid": "Masukkan nama lengkap yang valid.",
     "validation_fullName_required": "Nama kamu wajib diisi.",
-    "validation_password_min": "Kata sandi minimal 8 karakter.",
+    "validation_password_invalid": "Pilih kata sandi lain.",
+    "validation_password_required": "Masukkan kata sandi.",
     "validation_password_mismatch": "Kata sandi tidak cocok.",
     "navigation_tabs": {
       "activities": "Aktivitas",
@@ -62,6 +70,7 @@
       "heading": "Siap untuk bekerja dengan cara yang sedikit lebih cerdas?"
     },
     "screen_login": {
+      "invalidCredentials": "Email atau kata sandi salah.",
       "emailLabel": "Email",
       "emailPlaceholder": "nama@email.com",
       "forgotPassword": "Lupa kata sandi?",
@@ -69,13 +78,13 @@
       "passwordLabel": "Kata sandi",
       "passwordPlaceholder": "Masukkan kata sandi",
       "register": "Daftar",
-      "rememberMe": "Ingat saya",
       "submit": "Masuk",
       "subtitle": "SARA siap membantumu menyelesaikan hal-hal penting hari ini.",
       "title": "Selamat datang kembali!"
     },
     "screen_register": {
-      "confirmPasswordHelper": "Minimal 8 karakter.",
+      "invalidDetails": "Periksa data pendaftaran dan coba lagi.",
+      "confirmPasswordHelper": "Opsional. Harus sama dengan kata sandi di atas.",
       "confirmPasswordLabel": "Konfirmasi kata sandi",
       "confirmPasswordPlaceholder": "Konfirmasi kata sandi",
       "emailLabel": "Email",
@@ -84,12 +93,22 @@
       "fullNamePlaceholder": "Tulis nama kamu",
       "haveAccount": "Sudah memiliki akun?",
       "login": "Masuk",
-      "passwordHelper": "Minimal 8 karakter.",
       "passwordLabel": "Kata sandi",
       "passwordPlaceholder": "Buat kata sandi",
       "submit": "Buat akun",
       "subtitle": "Buat akun untuk mengatur dan menyusun prioritas tugasmu.",
       "title": "Mulai perjalanan produktifmu"
+    },
+    "screen_verify_email": {
+      "codeLabel": "Kode verifikasi",
+      "codePlaceholder": "000000",
+      "registerEmailFailed": "Akunmu sudah dibuat, tetapi email verifikasi gagal dikirim.",
+      "resend": "Kirim ulang kode",
+      "resendFallback": "Jika email ini perlu verifikasi, kode akan dikirim saat diizinkan.",
+      "sentTo": "Periksa {{email}} untuk kode 6 digit.",
+      "submit": "Verifikasi email",
+      "subtitle": "Masukkan kode verifikasi untuk melanjutkan.",
+      "title": "Verifikasi emailmu"
     },
     "screen_forgot_password": {
       "backToLoginQuestion": "Ingat kata sandimu?",
@@ -150,13 +169,12 @@
         "updateError": "Pengaturan notifikasi tidak dapat diubah. Coba lagi."
       },
       "privateSession": "Sesi pribadi",
-      "privateSessionDetail": "Account access · provider-neutral",
-      "profileStatus": "Sesi aktif · akun contoh",
+      "privateSessionDetail": "Sesi tersimpan aman di perangkat ini",
       "prototypeNote": "Ini adalah prototipe kandidat. Data contoh tersimpan hanya selama sesi pratinjau.",
       "prototypeVersion": "Candidate UI Design & Prototype v0.1",
       "signOut": "Keluar dari akun",
       "signOutConfirm": "Keluar",
-      "signOutMessage": "Sesi pratinjaumu akan berakhir.",
+      "signOutMessage": "Kamu perlu masuk lagi untuk mengakses akunmu.",
       "signOutTitle": "Keluar dari akun?"
     },
     "screen_placeholder": {

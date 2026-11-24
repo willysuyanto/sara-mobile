@@ -1,14 +1,28 @@
-import { render, screen } from '@testing-library/react-native';
+import { act, render, screen } from '@testing-library/react-native';
+
+import { useSession } from '@/hooks/domain/auth/session';
 
 import TestAppWrapper from '@/tests/TestAppWrapper';
 
 import Dashboard from './Dashboard';
 
 describe('Dashboard screen', () => {
+  afterEach(() => {
+    act(() => {
+      useSession.setState(useSession.getInitialState());
+    });
+  });
+
   it('renders the greeting, the agenda and the SARA prompt', () => {
+    useSession.setState({
+      session: {
+        status: 'signedIn',
+        user: { email: 'jane@example.test', id: 1, name: 'Jane Doe' },
+      },
+    });
     render(<Dashboard />, { wrapper: TestAppWrapper });
 
-    expect(screen.getByText('Selamat pagi, Adi')).toBeTruthy();
+    expect(screen.getByText('Selamat pagi, Jane Doe')).toBeTruthy();
     expect(screen.getByText('Harimu, selangkah\nlebih teratur.')).toBeTruthy();
     expect(screen.getByText('2 Aktivitas menanti hari ini')).toBeTruthy();
     expect(screen.getByText('Buat Aktivitas')).toBeTruthy();

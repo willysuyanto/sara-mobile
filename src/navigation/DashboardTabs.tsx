@@ -1,11 +1,13 @@
 import type { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { useQueryClient } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
+import { Alert } from 'react-native';
 
+import { signOut } from '@/hooks/domain/auth/session';
 import { Paths } from '@/navigation/paths';
-import type { RootScreenProps, RootTabParamList } from '@/navigation/types';
+import type { RootTabParamList } from '@/navigation/types';
 
 import { BottomNavigation } from '@/components/organisms';
 import {
@@ -26,14 +28,19 @@ function renderTabBar(props: BottomTabBarProps) {
  * Signed-in shell: the five bottom destinations, with Beranda hosting the
  * dashboard.
  */
-function DashboardTabs({ navigation }: RootScreenProps<Paths.Dashboard>) {
+function DashboardTabs() {
   const queryClient = useQueryClient();
   const { t } = useTranslation();
 
-  const signOut = () => {
-    queryClient.clear();
-    navigation.reset({ index: 0, routes: [{ name: Paths.Landing }] });
-  };
+  const logout = useMutation({
+    mutationFn: () =>
+      signOut(() => {
+        queryClient.clear();
+      }),
+    onError: () => {
+      Alert.alert(t('common_auth.signOutError'));
+    },
+  });
 
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }} tabBar={renderTabBar}>
@@ -61,7 +68,14 @@ function DashboardTabs({ navigation }: RootScreenProps<Paths.Dashboard>) {
         name={Paths.Pengaturan}
         options={{ title: t('navigation_tabs.settings') }}
       >
-        {() => <SettingScreen onSignOut={signOut} />}
+        {() => (
+          <SettingScreen
+            isSigningOut={logout.isPending}
+            onSignOut={() => {
+              logout.mutate();
+            }}
+          />
+        )}
       </Tab.Screen>
     </Tab.Navigator>
   );

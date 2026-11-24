@@ -9,6 +9,6 @@ import { storage } from './App';
 Reactotron.configure({
   name: config.name,
 })
-  .useReactNative()
+  .useReactNative({ networking: { ignoreUrls: /\/auth\// } })
   .use(mmkvPlugin<ReactotronReactNative>({ storage }))
   .connect();

@@ -1,8 +1,9 @@
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Pressable } from 'react-native';
 
 import { useAuth } from '@/hooks';
+import { AuthApiError } from '@/hooks/domain/auth/authService';
 import { registerSchema } from '@/hooks/domain/auth/schema';
 import { useZodForm } from '@/hooks/form';
 import { Paths } from '@/navigation/paths';
@@ -13,11 +14,23 @@ import { Button, Text } from '@/components/atoms';
 import { FormInput } from '@/components/molecules';
 import { AuthTemplate } from '@/components/templates';
 
+const ACCOUNT_CREATED_EMAIL_FAILED_STATUS = 503;
+const GENERIC_ERROR_MESSAGE = 'common_error';
+const INVALID_INPUT_STATUS = 422;
+
+const toErrorMessage = (error: unknown, fallback: string) =>
+  error instanceof AuthApiError &&
+  error.message &&
+  error.message !== GENERIC_ERROR_MESSAGE
+    ? error.message
+    : fallback;
+
 function Register({ navigation }: RootScreenProps<Paths.Register>) {
   const { t } = useTranslation();
   const { gutters, layout } = useTheme();
   const { useRegister } = useAuth();
   const register = useRegister();
+  const [errorMessage, setErrorMessage] = useState<string>();
 
   const { control, formState, handleSubmit } = useZodForm(registerSchema, {
     defaultValues: {
@@ -29,12 +42,30 @@ function Register({ navigation }: RootScreenProps<Paths.Register>) {
   });
 
   const onSubmit = handleSubmit((values) => {
+    setErrorMessage(undefined);
     register.mutate(values, {
+      onError: (error) => {
+        if (
+          error instanceof AuthApiError &&
+          error.status === ACCOUNT_CREATED_EMAIL_FAILED_STATUS
+        ) {
+          navigation.navigate(Paths.VerifyEmail, {
+            email: values.email,
+            message: toErrorMessage(
+              error,
+              t('screen_verify_email.registerEmailFailed'),
+            ),
+          });
+          return;
+        }
+        setErrorMessage(
+          error instanceof AuthApiError && error.status === INVALID_INPUT_STATUS
+            ? t('screen_register.invalidDetails')
+            : toErrorMessage(error, t(GENERIC_ERROR_MESSAGE)),
+        );
+      },
       onSuccess: () => {
-        navigation.reset({
-          index: 0,
-          routes: [{ name: Paths.Dashboard }],
-        });
+        navigation.navigate(Paths.VerifyEmail, { email: values.email });
       },
     });
   });
@@ -89,7 +120,6 @@ function Register({ navigation }: RootScreenProps<Paths.Register>) {
       <FormInput
         autoComplete="new-password"
         control={control}
-        helperMessage={t('screen_register.passwordHelper')}
         label={t('screen_register.passwordLabel')}
         name="password"
         password
@@ -109,6 +139,18 @@ function Register({ navigation }: RootScreenProps<Paths.Register>) {
         size="lg"
         testID="register-confirm-password"
       />
+
+      {errorMessage ? (
+        <Text
+          accessibilityLiveRegion="polite"
+          accessibilityRole="alert"
+          color="errorForeground"
+          testID="register-error"
+          variant="bodySecondary"
+        >
+          {errorMessage}
+        </Text>
+      ) : undefined}
 
       <Button
         disabled={!formState.isValid}

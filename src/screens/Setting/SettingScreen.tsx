@@ -4,6 +4,7 @@ import { Lucide } from '@react-native-vector-icons/lucide/static';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
+  ActivityIndicator,
   Alert,
   AppState,
   Pressable,
@@ -18,6 +19,7 @@ import {
   RESULTS,
 } from 'react-native-permissions';
 
+import { useSession } from '@/hooks/domain/auth/session';
 import { useTheme } from '@/theme';
 
 import { Text } from '@/components/atoms';
@@ -100,9 +102,18 @@ function SettingRow({
   );
 }
 
-function SettingScreen({ onSignOut }: { readonly onSignOut: () => void }) {
+function SettingScreen({
+  isSigningOut = false,
+  onSignOut,
+}: {
+  readonly isSigningOut?: boolean;
+  readonly onSignOut: () => void;
+}) {
   const { t } = useTranslation();
   const { backgrounds, borders, colors, gutters, layout } = useTheme();
+  const user = useSession(({ session }) =>
+    session.status === 'signedIn' ? session.user : undefined,
+  );
   const [permission, setPermission] = useState<
     'checking' | 'error' | PermissionStatus
   >('checking');
@@ -273,14 +284,14 @@ function SettingScreen({ onSignOut }: { readonly onSignOut: () => void }) {
               ]}
             >
               <Text color="textAccent" variant="labelPrimary">
-                A
+                {user?.name.slice(0, 1).toUpperCase()}
               </Text>
             </View>
           </View>
           <View style={[layout.flex_1, gutters.gap_7]}>
-            <Text variant="titlePrimary">Adi</Text>
+            <Text variant="titlePrimary">{user?.name}</Text>
             <Text color="textSecondary" variant="captionPrimary">
-              {t('screen_settings.profileStatus')}
+              {user?.email}
             </Text>
           </View>
           <Lucide
@@ -338,7 +349,10 @@ function SettingScreen({ onSignOut }: { readonly onSignOut: () => void }) {
         </View>
 
         <Pressable
+          accessibilityLabel={signOut}
           accessibilityRole="button"
+          accessibilityState={{ busy: isSigningOut, disabled: isSigningOut }}
+          disabled={isSigningOut}
           onPress={() => {
             Alert.alert(
               t('screen_settings.signOutTitle'),
@@ -366,9 +380,13 @@ function SettingScreen({ onSignOut }: { readonly onSignOut: () => void }) {
             pressed && { opacity: PRESSED_OPACITY },
           ]}
         >
-          <Text color="textAccent" variant="labelButton">
-            {signOut}
-          </Text>
+          {isSigningOut ? (
+            <ActivityIndicator color={colors.textAccent} />
+          ) : (
+            <Text color="textAccent" variant="labelButton">
+              {signOut}
+            </Text>
+          )}
         </Pressable>
 
         <View

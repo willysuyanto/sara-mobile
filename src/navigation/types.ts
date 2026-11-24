@@ -10,9 +10,9 @@ export type RootStackParamList = {
   [Paths.Dashboard]: undefined;
   [Paths.ForgotPassword]: undefined;
   [Paths.Landing]: undefined;
-  [Paths.Login]: undefined;
+  [Paths.Login]: { email?: string } | undefined;
   [Paths.Register]: undefined;
-  [Paths.Splashscreen]: undefined;
+  [Paths.VerifyEmail]: { email: string; message?: string };
 };
 
 export type RootTabParamList = {

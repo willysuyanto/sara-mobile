@@ -2,12 +2,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { act, fireEvent, render, screen } from '@testing-library/react-native';
 import { Alert } from 'react-native';
+import { resetGenericPassword } from 'react-native-keychain';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+import { useSession } from '@/hooks/domain/auth/session';
 import { Paths } from '@/navigation/paths';
 import type { RootStackParamList } from '@/navigation/types';
-
-import { Landing } from '@/screens';
 
 import TestAppWrapper from '@/tests/TestAppWrapper';
 
@@ -21,7 +21,6 @@ const renderTabs = () =>
       <NavigationContainer>
         <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen component={DashboardTabs} name={Paths.Dashboard} />
-          <Stack.Screen component={Landing} name={Paths.Landing} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>,
@@ -29,8 +28,20 @@ const renderTabs = () =>
   );
 
 describe('DashboardTabs', () => {
+  beforeEach(() => {
+    useSession.setState({
+      session: {
+        status: 'signedIn',
+        user: { email: 'jane@example.test', id: 1, name: 'Jane Doe' },
+      },
+    });
+  });
+
   afterEach(() => {
     jest.restoreAllMocks();
+    act(() => {
+      useSession.setState(useSession.getInitialState());
+    });
   });
 
   it('renders the five bottom destinations', () => {
@@ -43,7 +54,7 @@ describe('DashboardTabs', () => {
     expect(screen.getByText('Pengaturan')).toBeTruthy();
   });
 
-  it('opens Settings and returns to Landing after confirmed sign-out', async () => {
+  it('opens Settings and ends the saved session after confirmed sign-out', async () => {
     const alert = jest.spyOn(Alert, 'alert').mockImplementation(() => {});
     renderTabs();
 
@@ -52,6 +63,7 @@ describe('DashboardTabs', () => {
     expect(
       screen.getByRole('tab', { name: 'Pengaturan', selected: true }),
     ).toBeOnTheScreen();
+    expect(screen.getByText('jane@example.test')).toBeOnTheScreen();
     fireEvent.press(screen.getByRole('button', { name: 'Keluar dari akun' }));
 
     const confirm = alert.mock.lastCall?.[2]?.find(
@@ -63,10 +75,10 @@ describe('DashboardTabs', () => {
       await Promise.resolve();
     });
 
-    expect(
-      screen.getByRole('button', { name: 'Mulai sekarang' }),
-    ).toBeOnTheScreen();
-    expect(screen.queryByRole('tab', { name: 'Pengaturan' })).toBeNull();
+    expect(resetGenericPassword).toHaveBeenCalledWith({
+      service: 'sara.session',
+    });
+    expect(useSession.getState().session.status).toBe('signedOut');
   });
 
   it('opens the Activity screen from its bottom tab', () => {

@@ -1,20 +1,32 @@
-import type { LoginPayload, RegisterPayload, Session } from './schema';
+import type { LoginPayload } from './schema';
 
 import { useMutation } from '@tanstack/react-query';
 
 import { AuthServices } from './authService';
+import { saveSession } from './session';
 
 const useLoginMutation = () =>
-  useMutation<Session, Error, LoginPayload>({
-    mutationFn: AuthServices.login,
+  useMutation({
+    gcTime: 0,
+    mutationFn: async (payload: LoginPayload) =>
+      saveSession(await AuthServices.login(payload)),
   });
 
 const useRegisterMutation = () =>
-  useMutation<Session, Error, RegisterPayload>({
+  useMutation({
+    gcTime: 0,
     mutationFn: AuthServices.register,
   });
+
+const useResendOtpMutation = () =>
+  useMutation({ mutationFn: AuthServices.resendOtp });
+
+const useVerifyEmailMutation = () =>
+  useMutation({ gcTime: 0, mutationFn: AuthServices.verifyEmail });
 
 export const useAuth = () => ({
   useLogin: useLoginMutation,
   useRegister: useRegisterMutation,
+  useResendOtp: useResendOtpMutation,
+  useVerifyEmail: useVerifyEmailMutation,
 });

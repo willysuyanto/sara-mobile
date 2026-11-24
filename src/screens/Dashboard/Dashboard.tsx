@@ -2,6 +2,7 @@ import { Lucide } from '@react-native-vector-icons/lucide/static';
 import { useTranslation } from 'react-i18next';
 import { ScrollView, View } from 'react-native';
 
+import { useSession } from '@/hooks/domain/auth/session';
 import { useTheme } from '@/theme';
 
 import { Button, Text } from '@/components/atoms';
@@ -24,7 +25,6 @@ const RING_LARGE_OFFSET = { right: -166, top: 52 };
 const RING_SMALL = 200;
 const RING_SMALL_OFFSET = { right: -143, top: 77 };
 const SUN_ICON_SIZE = 22;
-const USER_NAME = 'Adi';
 
 // shortcut: placeholder agenda until the activities API exists.
 const TODAY_ACTIVITIES = [
@@ -58,6 +58,10 @@ const TODAY_ACTIVITIES = [
 function Dashboard() {
   const { i18n, t } = useTranslation();
   const { backgrounds, borders, colors, gutters, layout } = useTheme();
+  const name = useSession(({ session }) =>
+    session.status === 'signedIn' ? session.user.name : undefined,
+  );
+  const greeting = t('screen_dashboard.greeting');
 
   const today = new Date();
   const upcomingDate = new Date(
@@ -89,7 +93,7 @@ function Dashboard() {
 
             <View style={[layout.row, layout.itemsCenter, gutters.gap_8]}>
               <Text color="textPrimary" variant="headingBrand">
-                {`${t('screen_dashboard.greeting')}, ${USER_NAME}`}
+                {name ? `${greeting}, ${name}` : greeting}
               </Text>
               <Lucide
                 color={colors.accentWarm}
