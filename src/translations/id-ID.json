@@ -33,6 +33,29 @@
       "todayDate": "7 Okt",
       "upcoming": "Akan datang"
     },
+    "screen_history": {
+      "entries": {
+        "completed": {
+          "detail": "Review materi APPL",
+          "time": "Hari ini, 09.45",
+          "title": "Aktivitas selesai"
+        },
+        "created": {
+          "detail": "Kerjakan tugas jaringan",
+          "time": "Kemarin, 19.30",
+          "title": "Aktivitas dibuat"
+        },
+        "reminder": {
+          "detail": "Meeting kelompok",
+          "time": "Hari ini, 08.20",
+          "title": "Pengingat dikonfigurasi"
+        }
+      },
+      "heading": "Setiap perubahan,\ntetap terlihat.",
+      "intro": "Catatan sederhana tentang Aktivitas kamu.",
+      "privacyNote": "Riwayat hanya menampilkan Aktivitas milikmu.",
+      "recentUpdates": "Terakhir diperbarui"
+    },
     "screen_landing": {
       "body": "Temukan cara favorit baru untuk menyelesaikan berbagai hal.",
       "cta": "Mulai sekarang",
@@ -92,6 +115,49 @@
       "upcomingItemTitle": "Belajar algoritma",
       "upcomingMeta": "Kamis · 10.00 WIB",
       "upcomingTitle": "Akan datang"
+    },
+    "screen_planner": {
+      "composerLabel": "Apa yang ingin kamu atur?",
+      "heading": "Rencana dalam pikiran.\nTulis, lalu rapikan.",
+      "intro": "SARA membantu menyiapkan Aktivitas.\nKamu meninjau sebelum menyimpan.",
+      "manual": "Gunakan Input Manual",
+      "placeholder": "Misalnya, belajar algoritma besok jam 10 pagi",
+      "privacyNote": "Tidak ada perubahan tanpa tinjauanmu",
+      "review": "Tinjau interpretasi",
+      "suggestionHint": "Mengganti teks dengan contoh ini. Kamu bisa mengeditnya.",
+      "suggestions": {
+        "meeting": "Meeting kelompok jam 3",
+        "report": "Submit laporan besok",
+        "review": "Review materi APPL besok jam 9 pagi"
+      },
+      "suggestionsHeading": "COBA TULIS",
+      "tagline": "ASISTEN PRIBADI",
+      "unavailable": "Belum tersedia."
+    },
+    "screen_settings": {
+      "cancel": "Batal",
+      "heading": "Ruang pribadimu.",
+      "intro": "Sesi dan izin, tanpa pengaturan berlebih.",
+      "notificationPermission": "Izin notifikasi",
+      "notifications": {
+        "checking": "Memeriksa izin…",
+        "disabled": "Belum aktif",
+        "enabled": "Aktif",
+        "error": "Izin gagal diperiksa · ketuk untuk coba lagi",
+        "settingsAction": "Buka pengaturan",
+        "settingsMessage": "Kamu bisa mengaktifkan notifikasi di pengaturan perangkat.",
+        "unavailable": "Tidak tersedia di perangkat ini",
+        "updateError": "Pengaturan notifikasi tidak dapat diubah. Coba lagi."
+      },
+      "privateSession": "Sesi pribadi",
+      "privateSessionDetail": "Account access · provider-neutral",
+      "profileStatus": "Sesi aktif · akun contoh",
+      "prototypeNote": "Ini adalah prototipe kandidat. Data contoh tersimpan hanya selama sesi pratinjau.",
+      "prototypeVersion": "Candidate UI Design & Prototype v0.1",
+      "signOut": "Keluar dari akun",
+      "signOutConfirm": "Keluar",
+      "signOutMessage": "Sesi pratinjaumu akan berakhir.",
+      "signOutTitle": "Keluar dari akun?"
     },
     "screen_placeholder": {
       "body": "Layar ini sedang disiapkan dan akan segera hadir.",

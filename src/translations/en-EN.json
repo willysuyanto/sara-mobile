@@ -36,6 +36,29 @@
       "todayDate": "Oct 7",
       "upcoming": "Upcoming"
     },
+    "screen_history": {
+      "entries": {
+        "completed": {
+          "detail": "Review APPL materials",
+          "time": "Today, 9:45 a.m.",
+          "title": "Activity completed"
+        },
+        "created": {
+          "detail": "Work on the networking assignment",
+          "time": "Yesterday, 7:30 p.m.",
+          "title": "Activity created"
+        },
+        "reminder": {
+          "detail": "Group meeting",
+          "time": "Today, 8:20 a.m.",
+          "title": "Reminder set"
+        }
+      },
+      "heading": "Every change stays\nin view.",
+      "intro": "A simple record of your activities.",
+      "privacyNote": "History only shows your activities.",
+      "recentUpdates": "Recent updates"
+    },
     "screen_landing": {
       "body": "Discover a new favorite way to get things done.",
       "cta": "Get started",
@@ -95,6 +118,49 @@
       "upcomingItemTitle": "Learn algorithms",
       "upcomingMeta": "Thursday · 10.00 WIB",
       "upcomingTitle": "Upcoming"
+    },
+    "screen_planner": {
+      "composerLabel": "What would you like to plan?",
+      "heading": "Got a plan in mind?\nWrite it down.",
+      "intro": "SARA helps you set up activities.\nYou review them before saving.",
+      "manual": "Enter details manually",
+      "placeholder": "For example, study algorithms tomorrow at 10 a.m.",
+      "privacyNote": "Nothing changes without your review",
+      "review": "Review interpretation",
+      "suggestionHint": "Replaces your text with this example. You can edit it.",
+      "suggestions": {
+        "meeting": "Group meeting at 3",
+        "report": "Submit the report tomorrow",
+        "review": "Review APPL materials tomorrow at 9 a.m."
+      },
+      "suggestionsHeading": "TRY AN EXAMPLE",
+      "tagline": "PERSONAL ASSISTANT",
+      "unavailable": "Not available yet."
+    },
+    "screen_settings": {
+      "cancel": "Cancel",
+      "heading": "Your personal space.",
+      "intro": "Session and permissions, without the clutter.",
+      "notificationPermission": "Notification permission",
+      "notifications": {
+        "checking": "Checking permission…",
+        "disabled": "Not enabled",
+        "enabled": "Enabled",
+        "error": "Couldn't check permission · tap to retry",
+        "settingsAction": "Open settings",
+        "settingsMessage": "You can enable notifications in your device settings.",
+        "unavailable": "Not available on this device",
+        "updateError": "Couldn't update notifications. Please try again."
+      },
+      "privateSession": "Private session",
+      "privateSessionDetail": "Account access · provider-neutral",
+      "profileStatus": "Active session · demo account",
+      "prototypeNote": "This is a candidate prototype. Sample data is only kept during the preview session.",
+      "prototypeVersion": "Candidate UI Design & Prototype v0.1",
+      "signOut": "Sign out",
+      "signOutConfirm": "Sign out",
+      "signOutMessage": "This will end your preview session.",
+      "signOutTitle": "Sign out?"
     },
     "screen_placeholder": {
       "body": "This screen is being prepared and will be here soon.",

@@ -10,4 +10,5 @@ export { default as Radio } from './Radio/Radio';
 export { default as RadioGroup } from './Radio/RadioGroup';
 export { default as SearchInput } from './SearchInput/SearchInput';
 export { default as SectionHeader } from './SectionHeader/SectionHeader';
+export { default as TimelineRow } from './TimelineRow/TimelineRow';
 export { default as UpcomingCard } from './UpcomingCard/UpcomingCard';

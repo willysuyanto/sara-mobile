@@ -1,8 +1,11 @@
 export { default as Activity } from './Activity/Activity';
 export { default as Dashboard } from './Dashboard/Dashboard';
 export { default as ForgotPassword } from './ForgotPassword/ForgotPassword';
+export { default as HistoryScreen } from './History/HistoryScreen';
 export { default as Landing } from './Landing/Landing';
 export { default as Login } from './Login/Login';
 export { default as Placeholder } from './Placeholder/Placeholder';
+export { default as PlannerScreen } from './Planner/PlannerScreen';
 export { default as Register } from './Register/Register';
+export { default as SettingScreen } from './Setting/SettingScreen';
 export { default as Splashscreen } from './Splashscreen/Splashscreen';
